@@ -1,0 +1,38 @@
+<%= form_with scope: :challenge, local: true do |form| %>
+  <p>
+    <%= form.label :name %><br>
+    <%= form.text_field :name %>
+  </p>
+ 
+  <p>
+    <%= form.label :decription %><br>
+    <%= form.text_area :decription %>
+  </p>
+  <p>
+    <%= form.label :duration %><br>
+    <%= form.text_field :duration %>
+  </p>
+ 
+  <p>
+    <%= form.label :age_experience %><br>
+    <%= form.text_field :age_experience %>
+  </p>
+  <p>
+    <%= form.label :intensity %><br>
+    <%= form.text_field :intensity %>
+  </p>
+ 
+  <p>
+    <%= form.label :activity_description %><br>
+    <%= form.text_area :activity_description %>
+  </p>
+
+   <p>
+    <%= form.label :coach_notes %><br>
+    <%= form.text_area :coach_notes %>
+  </p>
+
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>

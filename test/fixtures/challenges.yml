@@ -1,0 +1,19 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  description: MyString
+  duration: MyString
+  age_experience: MyString
+  intensity: MyString
+  activity_description: MyString
+  coach_notes: MyString
+
+two:
+  name: MyString
+  description: MyString
+  duration: MyString
+  age_experience: MyString
+  intensity: MyString
+  activity_description: MyString
+  coach_notes: MyString
