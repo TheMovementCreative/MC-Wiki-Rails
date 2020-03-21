@@ -13,9 +13,8 @@ class ChallengesController < ApplicationController
     end
 
     def create
-        render plain: params[:challenge].inspect
 
-        @challenge = Article.new(params[:challenge])
+        @challenge = Challenge.new(challenge_params)
  
         @challenge.save
         redirect_to @challenge
@@ -23,6 +22,6 @@ class ChallengesController < ApplicationController
 
     private
         def challenge_params
-            params.require(:challenge).permit(:title, :text)
+            params.require(:challenge).permit(:name, :description, :duration, :age_experience, :intensity, :activity_description, :coach_notes)
         end
 end
