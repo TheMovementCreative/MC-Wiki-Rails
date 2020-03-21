@@ -1,4 +1,4 @@
-<%= form_with scope: :challenge, local: true do |form| %>
+<%= form_with scope: :challenge, url: challenges_path, local: true do |form| %>
   <p>
     <%= form.label :name %><br>
     <%= form.text_field :name %>
