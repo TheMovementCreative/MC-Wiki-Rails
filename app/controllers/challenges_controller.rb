@@ -22,6 +22,6 @@ class ChallengesController < ApplicationController
 
     private
         def challenge_params
-            params.require(:challenge).permit(:name, :description, :duration, :age_experience, :intensity, :activity_description, :coach_notes)
+            params.require(:challenge).permit(:game_title, :purpose, :space, :goal, :challenge, :core_mechanics, :components, :rules)
         end
 end

@@ -2,24 +2,24 @@
  
 <table border="1">
   <tr>
-    <th>name</th>
-    <th>description</th>
-    <th>duration</th>
-    <th>age_experience</th>
-    <th>intensity</th>
-    <th>activity_description</th>
-    <th>coach_notes</th>
+    <th>Game Title</th>
+    <th>Purpose</th>
+    <th>Space</th>
+    <th>Goal</th>
+    <th>Core Mechanics</th>
+    <th>Components</th>
+    <th>Rules</th>
   </tr>
  
   <% @challenges.each do |challenge| %>
     <tr>
-      <td><%= challenge.name %></td>
-      <td><%= challenge.description %></td>
-      <td><%= challenge.duration %></td>
-      <td><%= challenge.age_experience %></td>
-      <td><%= challenge.intensity %></td>
-      <td><%= challenge.activity_description %></td>
-      <td><%= challenge.coach_notes %></td>
+      <td><%= challenge.game_title %></td>
+      <td><%= challenge.purpose %></td>
+      <td><%= challenge.space %></td>
+      <td><%= challenge.goal %></td>
+      <td><%= challenge.challenge %></td>
+      <td><%= challenge.core_mechanics %></td>
+      <td><%= challenge.components %></td>
       <td><%= link_to 'Show', challenge_path(challenge) %></td>
     </tr>
   <% end %>

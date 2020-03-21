@@ -1,35 +1,40 @@
 <%= form_with scope: :challenge, url: challenges_path, local: true do |form| %>
   <p>
-    <%= form.label :name %><br>
-    <%= form.text_field :name %>
+    <%= form.label :game_title %><br>
+    <%= form.text_field :game_title %>
   </p>
  
   <p>
-    <%= form.label :decription %><br>
-    <%= form.text_area :decription %>
+    <%= form.label :purpose %><br>
+    <%= form.text_area :purpose %>
   </p>
   <p>
-    <%= form.label :duration %><br>
-    <%= form.text_field :duration %>
-  </p>
- 
-  <p>
-    <%= form.label :age_experience %><br>
-    <%= form.text_field :age_experience %>
-  </p>
-  <p>
-    <%= form.label :intensity %><br>
-    <%= form.text_field :intensity %>
+    <%= form.label :space %><br>
+    <%= form.text_field :space %>
   </p>
  
   <p>
-    <%= form.label :activity_description %><br>
-    <%= form.text_area :activity_description %>
+    <%= form.label :goal %><br>
+    <%= form.text_field :goal %>
+  </p>
+  <p>
+    <%= form.label :challenge %><br>
+    <%= form.text_field :challenge %>
+  </p>
+ 
+  <p>
+    <%= form.label :core_mechanics %><br>
+    <%= form.text_area :core_mechanics %>
+  </p>
+
+  <p>
+    <%= form.label :components %><br>
+    <%= form.text_area :components %>
   </p>
 
    <p>
-    <%= form.label :coach_notes %><br>
-    <%= form.text_area :coach_notes %>
+    <%= form.label :rules %><br>
+    <%= form.text_area :rules %>
   </p>
 
   <p>
