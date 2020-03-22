@@ -27,6 +27,7 @@ ActiveRecord::Schema.define(version: 2020_03_22_050300) do
     t.datetime "updated_at", precision: 6, null: false
     t.string "rules"
     t.string "video_url"
+    t.string "image_url"
   end
 
 end

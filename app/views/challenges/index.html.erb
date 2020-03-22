@@ -3,7 +3,7 @@
 </nav>
  
  <div class="container">
-    <table class="table">
+    <table class="table table-bordered">
       <thead class="thead-dark">
         <tr>
             <th>Game Title</th>
@@ -14,6 +14,7 @@
             <th>Components</th>
             <th>Rules</th>
             <th>Video URL</th>
+            <th>Image URL</th>
         </tr>
       </thead>
     <tbody>
@@ -28,6 +29,7 @@
         <td><%= challenge.components %></td>
         <td><%= challenge.rules %></td>
         <td><%= challenge.video_url %></td>
+        <td><%= challenge.image_url %></td>
         <td><%= link_to 'Show', challenge_path(challenge) %></td>
         </tr>
     <% end %>
