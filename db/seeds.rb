@@ -1,17 +1,19 @@
 require 'json'
-file = File.read("./db/challenges_data.json")
+file = File.read("./db/db2.json")
 data_hash = JSON.parse(file)
 
-data_hash["activities"]["challenges"].map{ |challenge|
+data_hash["activities"].map{ |challenge|
   Challenge.create(
-    game_title: challenge["game_title"],
+    activity_title: challenge["activity_title"],
     purpose: challenge["purpose"],
-    rules: challenge["rules"],
     space: challenge["space"],
     goal: challenge["goal"],
     challenge: challenge["challenge"],
-    core_mechanics: challenge["core_mechanics"],
-    components: challenge["components"],
+    movementsActions: challenge["movementsActions"],
+    tools: challenge["tools"],
+    rules: challenge["rules"],
+    videoURL: challenge["videoURL"],
+    imageURL: challenge["imageURL"]
   )
 }
 

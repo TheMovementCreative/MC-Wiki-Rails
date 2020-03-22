@@ -1,13 +1,16 @@
 class CreateChallenges < ActiveRecord::Migration[6.0]
   def change
     create_table :challenges do |t|
-      t.string :name
-      t.string :description
-      t.string :duration
-      t.string :age_experience
-      t.string :intensity
-      t.string :activity_description
-      t.string :coach_notes
+      t.string :activity_title
+      t.string :purpose
+      t.string :space
+      t.string :goal
+      t.string :challenge
+      t.string :movementsActions
+      t.string :tools
+      t.string :rules
+      t.string :videoURL
+      t.string :imageURL
 
       t.timestamps
     end

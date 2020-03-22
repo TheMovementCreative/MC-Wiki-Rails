@@ -1,7 +1,7 @@
 
 <p>
   <strong>Game Title</strong>
-  <%= @challenge.game_title %>
+  <%= @challenge.activity_title %>
 </p>
  
 <p>
@@ -25,18 +25,28 @@
 </p>
 
 <p>
-  <strong>Core Mechanics:</strong>
-  <%= @challenge.core_mechanics %>
+  <strong>Actions / Movements:</strong>
+  <%= @challenge.movementsActions %>
 </p>
 
 <p>
   <strong>Components:</strong>
-  <%= @challenge.components %>
+  <%= @challenge.tools %>
 </p>
 
 <p>
   <strong>Rules:</strong>
   <%= @challenge.rules %>
+</p>
+
+<p>
+  <strong>Video:</strong>
+  <%= @challenge.videoURL %>
+</p>
+
+<p>
+  <strong>Image:</strong>
+  <%= @challenge.imageURL %>
 </p>
  
 <%= link_to 'Back', challenges_path %>

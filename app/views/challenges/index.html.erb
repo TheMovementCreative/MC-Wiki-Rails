@@ -6,28 +6,31 @@
     <table class="table">
       <thead class="thead-dark">
         <tr>
-            <th>Game Title</th>
+            <th>Activity Title</th>
             <th>Purpose</th>
             <th>Space</th>
             <th>Goal</th>
-            <th>Core Mechanics</th>
-            <th>Components</th>
+            <th>Challenge</th>
+            <th>Actions/Movements</th>
+            <th>Tools</th>
             <th>Rules</th>
             <th>Video URL</th>
+            <th>Image URL</th>
         </tr>
       </thead>
     <tbody>
     <% @challenges.each do |challenge| %>
         <tr>
-        <td><%= challenge.game_title %></td>
+        <td><%= challenge.activity_title %></td>
         <td><%= challenge.purpose %></td>
         <td><%= challenge.space %></td>
         <td><%= challenge.goal %></td>
         <td><%= challenge.challenge %></td>
-        <td><%= challenge.core_mechanics %></td>
-        <td><%= challenge.components %></td>
+        <td><%= challenge.movementsActions %></td>
+        <td><%= challenge.tools %></td>
         <td><%= challenge.rules %></td>
-        <td><%= challenge.video_url %></td>
+        <td><%= challenge.videoURL %></td>
+        <td><%= challenge.imageURL %></td>
         <td><%= link_to 'Show', challenge_path(challenge) %></td>
         </tr>
     <% end %>
