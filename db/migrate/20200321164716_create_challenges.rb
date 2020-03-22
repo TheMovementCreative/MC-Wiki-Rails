@@ -6,11 +6,11 @@ class CreateChallenges < ActiveRecord::Migration[6.0]
       t.string :space
       t.string :goal
       t.string :challenge
-      t.string :movementsActions
+      t.string :action_movements
       t.string :tools
       t.string :rules
-      t.string :videoURL
-      t.string :imageURL
+      t.string :video_url
+      t.string :image_url
 
       t.timestamps
     end

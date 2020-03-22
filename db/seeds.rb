@@ -9,11 +9,11 @@ data_hash["activities"].map{ |challenge|
     space: challenge["space"],
     goal: challenge["goal"],
     challenge: challenge["challenge"],
-    movementsActions: challenge["movementsActions"],
+    actions_movements: challenge["actions_movements"],
     tools: challenge["tools"],
     rules: challenge["rules"],
-    videoURL: challenge["videoURL"],
-    imageURL: challenge["imageURL"]
+    video_url: challenge["video_url"],
+    image_url: challenge["image_url"]
   )
 }
 

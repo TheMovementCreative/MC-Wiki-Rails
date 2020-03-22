@@ -21,13 +21,13 @@ ActiveRecord::Schema.define(version: 2020_03_22_180244) do
     t.string "space"
     t.string "goal"
     t.string "challenge"
-    t.string "movementsActions"
+    t.string "actions_movements"
     t.string "tools"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "rules"
-    t.string "videoURL"
-    t.string "imageURL"
+    t.string "video_url"
+    t.string "image_url"
   end
 
 end
