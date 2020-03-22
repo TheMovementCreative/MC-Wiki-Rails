@@ -1,4 +1,5 @@
 <%= form_with scope: :challenge, url: challenges_path, local: true do |form| %>
+
   <p>
     <%= form.label :game_title %><br>
     <%= form.text_field :game_title %>
@@ -6,7 +7,7 @@
  
   <p>
     <%= form.label :purpose %><br>
-    <%= form.text_area :purpose %>
+    <%= form.text_field :purpose %>
   </p>
   <p>
     <%= form.label :space %><br>
@@ -24,17 +25,17 @@
  
   <p>
     <%= form.label :core_mechanics %><br>
-    <%= form.text_area :core_mechanics %>
+    <%= form.text_field :core_mechanics %>
   </p>
 
   <p>
     <%= form.label :components %><br>
-    <%= form.text_area :components %>
+    <%= form.text_field :components %>
   </p>
 
    <p>
     <%= form.label :rules %><br>
-    <%= form.text_area :rules %>
+    <%= form.text_field :rules %>
   </p>
 
   <p>
