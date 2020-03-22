@@ -1,5 +1,5 @@
 require 'json'
-file = File.read("/mnt/d/Development/mc-wiki-rails/db/challenges_data.json")
+file = File.read("../db/challenges_data.json")
 data_hash = JSON.parse(file)
 
 data_hash["activities"]["challenges"].map{ |challenge|
