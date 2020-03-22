@@ -13,6 +13,7 @@
             <th>Core Mechanics</th>
             <th>Components</th>
             <th>Rules</th>
+            <th>Video URL</th>
         </tr>
       </thead>
     <tbody>
@@ -25,6 +26,8 @@
         <td><%= challenge.challenge %></td>
         <td><%= challenge.core_mechanics %></td>
         <td><%= challenge.components %></td>
+        <td><%= challenge.rules %></td>
+        <td><%= challenge.video_url %></td>
         <td><%= link_to 'Show', challenge_path(challenge) %></td>
         </tr>
     <% end %>
