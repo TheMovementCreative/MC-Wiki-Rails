@@ -1,6 +1,5 @@
 class ChallengesController < ApplicationController
 
-
     def index
       @challenges = Challenge.all
     end 
@@ -22,6 +21,6 @@ class ChallengesController < ApplicationController
 
     private
         def challenge_params
-            params.require(:challenge).permit(:game_title, :purpose, :space, :goal, :challenge, :core_mechanics, :components, :rules, :video_url)
+            params.require(:challenge).permit(:activity_title, :purpose, :space, :goal, :challenge, :actions_movements, :tools, :rules, :video_url, :image_url)
         end
 end

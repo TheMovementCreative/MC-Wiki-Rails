@@ -1,6 +1,7 @@
 {
   "name": "mc_wiki_rails",
   "private": true,
+  "license":"MC",
   "dependencies": {
     "@rails/actioncable": "^6.0.0",
     "@rails/activestorage": "^6.0.0",
