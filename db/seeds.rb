@@ -1,5 +1,5 @@
 require 'json'
-file = File.read("./db/db2.json")
+file = File.read("./db/challenges_data.json")
 data_hash = JSON.parse(file)
 
 data_hash["activities"].map{ |challenge|
