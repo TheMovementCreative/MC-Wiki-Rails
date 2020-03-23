@@ -11,12 +11,28 @@ class ChallengesController < ApplicationController
     def new
     end
 
-    def create
+    def edit
+      @challenge = Challenge.find(params[:id])
+    end
 
+    def create
         @challenge = Challenge.new(challenge_params)
  
-        @challenge.save
+        if @challenge.save
+          redirect_to @challenge
+        else
+          render 'new'
+        end
+    end
+
+    def update
+      @challenge = Challenge.find(params[:id])
+     
+      if @challenge.update(challenge_params)
         redirect_to @challenge
+      else
+        render 'edit'
+      end
     end
 
     private

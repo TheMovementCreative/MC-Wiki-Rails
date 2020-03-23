@@ -1,0 +1,59 @@
+<h1>Edit Challenge</h1>
+ 
+<%= form_with(model: @challenge, local: true) do |form| %>
+ 
+  <p>
+    <%= form.label :activity_title %><br>
+    <%= form.text_field :activity_title %>
+  </p>
+ 
+  <p>
+    <%= form.label :purpose %><br>
+    <%= form.text_field :purpose %>
+  </p>
+  <p>
+    <%= form.label :space %><br>
+    <%= form.text_field :space %>
+  </p>
+ 
+  <p>
+    <%= form.label :goal %><br>
+    <%= form.text_field :goal %>
+  </p>
+  <p>
+    <%= form.label :challenge %><br>
+    <%= form.text_field :challenge %>
+  </p>
+ 
+  <p>
+    <%= form.label :actions_movements %><br>
+    <%= form.text_field :actions_movements %>
+  </p>
+
+  <p>
+    <%= form.label :tools %><br>
+    <%= form.text_field :tools %>
+  </p>
+
+   <p>
+    <%= form.label :rules %><br>
+    <%= form.text_field :rules %>
+  </p>
+
+    <p>
+    <%= form.label :video_url %><br>
+    <%= form.text_field :video_url %>
+  </p>
+
+  <p>
+  <%= form.label :image_url %><br>
+  <%= form.text_field :image_url %>
+</p>
+ 
+  <p>
+    <%= form.submit %>
+  </p>
+ 
+<% end %>
+ 
+<%= link_to 'Back', challenges_path %>
