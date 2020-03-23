@@ -52,6 +52,7 @@
         <td><%= challenge.rules %></td>
         <td><%= challenge.video_url %></td>
         <td><%= challenge.image_url %></td>
+        <td><%= link_to 'Edit', edit_challenge_path(challenge) %></td>
         <td><%= link_to 'Show', challenge_path(challenge) %></td>
         </tr>
     <% end %>
