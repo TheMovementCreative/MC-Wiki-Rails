@@ -1,7 +1,10 @@
 class ChallengesController < ApplicationController
-
+  before_action :authenticate_user!
+  
     def index
-      @challenges = Challenge.all
+      if current_user
+        @challenges = Challenge.all
+      end
     end 
 
     def show
