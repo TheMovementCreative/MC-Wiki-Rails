@@ -1,4 +1,4 @@
-<nav class="navbar navbar-light bg-light">
+<nav class="navbar navbar-expand-md navbar-dark bg-dark mb-3">
   <span class="navbar-brand mb-0 h1"> Movement Creative Challenges</span>
 </nav>
   <div class="container mt-3">
@@ -13,7 +13,7 @@
                       <ul class="list-group list-group-flush">
                         <li class="list-group-item"><small class = "muted text">Space: <%= challenge.space %></small></li>
                         <li class="list-group-item"><small class = "muted text">Tools: <%= challenge.tools %></small></li>
-                        <li class="list-group-item"><small class = "muted text">Movemnts & Actions: <%= challenge.actions_movements %></small></li>
+                        <li class="list-group-item"><small class = "muted text">Movements & Actions: <%= challenge.actions_movements %></small></li>
                       </ul>
                       <a href=<%= challenge_path(challenge)%> class="btn btn-primary">View Activity</a>
                   </div>
