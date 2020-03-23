@@ -21,7 +21,9 @@
                         <li class="list-group-item"><small class = "muted text">Movements & Actions: <%= challenge.actions_movements %></small></li>
                       </ul>
                       </p>
-                      <p><a href=<%= challenge_path(challenge)%> class="btn btn-primary">View Activity</a></p>
+                      <div><a href=<%= challenge_path(challenge)%> class="btn btn-primary">View</a></p>
+                      <p><a href=<%=  edit_challenge_path(challenge) %> class="btn btn-primary">Edit</a></div>
+
                   </div>
               </div>
             <% end %>
