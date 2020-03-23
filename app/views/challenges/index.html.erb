@@ -2,6 +2,27 @@
   <span class="navbar-brand mb-0 h1"> Movement Creative Challenges</span>
 </nav>
  
+<div class="card-deck">
+<% @challenges.each do |challenge| %>
+  <div class="col-sm-6">
+      <div class="card w-40 border-primary mb-3" style = "max-width: 18rem;">
+        <img class="card-img-cap" src="./assets/MC_Logo.png" alt="MC Logo">
+          <div class="card-body">
+            <h5 class="card-title"><%= challenge.activity_title %></h5>
+            <p class="card-text"><%= challenge.purpose %></p>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item"><small class = "muted text">Space: <%= challenge.space %></small></li>
+              <li class="list-group-item"><small class = "muted text">Tools: <%= challenge.tools %></small></li>
+              <li class="list-group-item"><small class = "muted text">Movemnts & Actions: <%= challenge.actions_movements %></small></li>
+            </ul>
+            <a href=<%= challenge_path(challenge)%> class="btn btn-primary">View Activity</a>
+          </div>
+        </div>
+    </div>
+    
+  <% end %>
+  </div>
+
  <div class="container">
     <table class="table table-bordered">
       <thead class="thead-dark">
