@@ -10,12 +10,13 @@
                   <div class="card-body">
                       <h5 class="card-title"><%= challenge.activity_title %></h5>
                       <p class="card-te☻xt"><%= challenge.purpose %></p>
-                      <ul class="list-group list-group-flush">
+                      <p><ul class="list-group list-group-flush">
                         <li class="list-group-item"><small class = "muted text">Space: <%= challenge.space %></small></li>
                         <li class="list-group-item"><small class = "muted text">Tools: <%= challenge.tools %></small></li>
                         <li class="list-group-item"><small class = "muted text">Movements & Actions: <%= challenge.actions_movements %></small></li>
                       </ul>
-                      <a href=<%= challenge_path(challenge)%> class="btn btn-primary">View Activity</a>
+                      </p>
+                      <p><a href=<%= challenge_path(challenge)%> class="btn btn-primary">View Activity</a></p>
                   </div>
               </div>
             <% end %>
