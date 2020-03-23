@@ -1,56 +1,60 @@
 
-<p>
-  <strong>Game Title</strong>
-  <%= @challenge.activity_title %>
-</p>
- 
-<p>
-  <strong>Purpose:</strong>
-  <%= @challenge.purpose %>
-</p>
-
-<p>
-  <strong>Space</strong>
-  <%= @challenge.space %>
-</p>
-
-<p>
-  <strong>Goal</strong>
-  <%= @challenge.goal %>
-</p>
-
-<p>
-  <strong>Challenge:</strong>
-  <%= @challenge.challenge %>
-</p>
-
-<p>
-  <strong>Actions / Movements:</strong>
-  <%= @challenge.actions_movements %>
-</p>
-
-<p>
-  <strong>Components:</strong>
-  <%= @challenge.tools %>
-</p>
-
-<p>
-  <strong>Rules:</strong>
-  <%= @challenge.rules %>
-</p>
-
-<p>
-  <strong>Video:</strong>
-  <%= @challenge.video_url %>
+<nav class="navbar navbar-expand-md navbar-dark bg-dark mb-3">
+  <div class="container-fluid">
+    <span class="navbar-brand mb-0 h1"> Movement Creative Challenges</span>
+    <div class="navbar-nav ml-auto">
+      <button type="button" class="btn nav-button"><%= link_to 'New Challenge', new_challenge_path %></button>
+    </div>
+  </div>
+</nav>
+  <div class="container-fluid" style="padding: 0px 20px;" >
+    <h3>
+      <%= @challenge.activity_title %>
+    </h3>
+    <div class="containter-fluid" style = "max-height = 20%;  background-color: #00A1E0; color:white; display: flex; padding:5px 10px;">
+      <p>
+        <strong>Purpose:</strong>
+        <%= @challenge.purpose %>
+      </p>
+    </div>
+    <div class="containter row" style = "overflow: auto; max-width: 100%; padding: 40px 0px; display: flex; justify-content: space-between;">
+      <div class="col-sm">  
+        <ul class="list-group list-group-flush" style =  "font-size: 12px">
+            <li class="list-group-item"><p>Space:</p> <%= @challenge.space %></li>
+            <li class="list-group-item"><p>Tools:</p> <%= @challenge.tools %></li>
+            <li class="list-group-item"><p>Movements:</p> <%= @challenge.actions_movements %></li>
+        </ul>
+      </div>
+      <div class="col-sm" style: "display: flex; justify-content: flex-end; align-items: center;">
+        <img class="img" src="<%= image_path('MC_Logo.png') %>" alt="Card image cap" style= "max-width: 40%;">
+      </div>
+    
+  <div class="containter row" style = "overflow: auto;  max-width: 90pv; padding: 40px 0px; display: flex; justify-content: space-around; flex-wrap:wrap;">
+    <div class="col-sm">
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/JVN7OeOLMvM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+    <div class="col-sm" style = "display:flex; justify-content: center; flex-direction: column">
+      <p>
+        <strong>Challenge:</strong>
+        <%= @challenge.challenge %>
+      </p>
+      <p>
+        <strong>Goal</strong>
+        <%= @challenge.goal %>
+      </p>
+    </div>
   
-<iframe width="560" height="315" src="https://www.youtube.com/embed/JVN7OeOLMvM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  <div class="container row" style="padding-top:50px;">
+    <p>
+    <strong>Rules:</strong>
+    <%= @challenge.rules %>
+    </p>
+  </div>
+  <div class="container row">
 
-</p>
+    <%= link_to 'Edit', edit_challenge_path(@challenge) %>
+    <%= link_to 'Back', challenges_path %>
+  </div>
+</div>
+  
 
-<p>
-  <strong>Image:</strong>
-  <%= @challenge.image_url %>
-</p>
- 
-<%= link_to 'Edit', edit_challenge_path(@challenge) %>
-<%= link_to 'Back', challenges_path %>
