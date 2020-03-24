@@ -1,5 +1,6 @@
 <h1>Edit Challenge</h1>
  
+<div class="container-fluid">
 <%= form_with(model: @challenge, local: true) do |form| %>
  
   <p>
@@ -34,12 +35,12 @@
     <%= form.label :tools %><br>
     <%= form.text_field :tools %>
   </p>
-
-   <p>
-    <%= form.label :rules %><br>
-    <%= form.text_field :rules %>
-  </p>
-
+<div class="form-group">
+   
+    <%= form.label :rules %> <a class= "text-muted">(resize me!)</a> <br>
+    <%= form.text_area :rules %>
+  
+</div>
     <p>
     <%= form.label :video_url %><br>
     <%= form.text_field :video_url %>
@@ -55,5 +56,5 @@
   </p>
  
 <% end %>
- 
+ </div>
 <%= link_to 'Back', challenges_path %>
