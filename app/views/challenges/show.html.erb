@@ -25,13 +25,13 @@
         </ul>
       </div>
       <div class="container-fluid col-sm" style: "display: flex; justify-content: flex-end; align-items: center;">
-        <img class="img" src="<%= image_path('MC_Logo.png') %>" alt="Card image cap" style= "max-width: 40%;">
+        <img class="img" src="<%= @challenge.image_url.blank? ? image_path('MC_Logo.png') : image_path(@challenge.image_url) %>" alt="Card image cap" style= "max-width: 40%;">
       </div>
     </div>
     <hr>
   <div class="containter row" style = "overflow: auto;  max-width: 90pv; padding: 25px 0px; display: flex; justify-content: space-around; flex-wrap:wrap;">
     <div class="col-sm">
-      <iframe width="560" height="315" src="https://www.youtube.com/embed/JVN7OeOLMvM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      <iframe width="560" height="315" src="<%=  @challenge.video_url.blank? ? 'https://www.youtube.com/embed/JVN7OeOLMvM' : @challenge.video_url %>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </div>
     <div class="col-sm" style = "display:flex; justify-content: center; flex-direction: column">
       <p>
