@@ -1,0 +1,120 @@
+<p id="notice"><%= notice %></p>
+
+<div class="container-fluid" style = "background-color: #00A1E0; color: white; display: flex; align-items: center;">
+  <span>
+    <h3 style= "color: white;"><%= @lesson.lesson_name %> </h3>
+    <sup><em> By: <%= @lesson.author %> </em></sup>
+  </span>
+</div>
+
+<br>
+
+<div class= "container-fluid">
+  <p>
+    
+    <b><%= @lesson.purpose %></b>
+  </p>
+</div>
+
+<hr>
+
+<div class = "container-fluid">
+
+  <p>
+    <strong>Tools Required:</strong>
+    <%= @lesson.tools %>
+  </p>
+
+</div>
+
+<br>
+
+<div class= "container-fluid" style="display: flex; justify-content: center;">
+  <div class="container-fluid col-sm" style: "display: flex; justify-content: flex-end; align-items: center;">
+        <iframe width="560" height="315" src="<%=  @lesson.video_url.blank? ? 'https://www.youtube.com/embed/JVN7OeOLMvM' : @lesson.video_url %>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+  <div class="container-fluid col-sm" style= "display: flex; justify-content: flex-start; align-items: center;">
+        <%= @lesson.details %>
+  </div>
+  
+</div>
+<hr>
+<div class="container-fluid">
+  <h3>
+  Recomended Warm Up:
+  <%= @lesson.warm_up %>
+  </h3>
+</div>
+<hr>
+
+  <% @lesson.activities.each_with_index do |activity,index| %>
+    <% challenge = @challenges.find_by(activity_title: activity) %>  
+
+    <div class="container-fluid"  style="padding: 0px 20px;" >
+    <h3>
+      Activity <%= (index + 1) %>: <%= challenge.activity_title %> 
+
+    </h3>
+    <div class="containter-fluid" style = " background-color: #00A1E0; color:white;">
+          <p style="color:white; padding-left: 10px; display: flex; align-items: center; justify-content: flex-start;">
+            <%= challenge.purpose %>
+          </p>
+    </div>
+
+    <button class="btn tmc-bg-dk-blu tmc-white" type="button" data-toggle="collapse" data-target="#collapse-activity<%= index %>" aria-expanded="false" aria-controls="collapse-activity<%= index %>">
+    See Acticity
+    </button>  
+
+      <div class="collapse" id= "collapse-activity<%= index %>">
+        
+        <div class="containter-fluid row" style = "overflow: auto; max-width: 100%; padding: 00px 0px; display: flex; justify-content: space-between;">
+          <div class="col-sm">  
+            <ul class="list-group list-group-flush" style =  "font-size: 14px">
+                <li class="list-group-item"><p>Space:</p> <%= challenge.space %></li>
+                <li class="list-group-item"><p>Tools:</p> <%= challenge.tools %></li>
+                <li class="list-group-item"><p>Movements:</p> <%= challenge.actions_movements %></li>
+                <li class="list-group-item"><p>Challenge:</p> <%= challenge.challenge %></li>
+                <li class="list-group-item"><p>Goals:</p> <%= challenge.goal %></li>
+            </ul>
+          </div>
+          <div class="container-fluid col-sm" style: "display: flex; justify-content: flex-end; align-items: center;">
+          <iframe width="560" height="315" src="<%=  challenge.video_url.blank? ? 'https://www.youtube.com/embed/JVN7OeOLMvM' : challenge.video_url %>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+        </div>
+        <div class="container-fluid" style="display: flex; justify-content: center;">
+          <button class="btn tmc-bg-dk-blu tmc-white" type="button" data-toggle="collapse" data-target="#collapseRules<%= index %>" aria-expanded="false" aria-controls="collapseRules<%= index %>">
+            See Rules
+          </button>
+          </div>
+          <br>
+          <div class="collapse" id="collapseRules<%= index %>">
+          <hr>
+              <p>
+                <%= challenge.rules %>
+              </p>
+        </div>
+
+      </div>
+
+    </div>
+    <hr>
+
+
+
+
+    
+  <% end %>
+<br><br><br>
+
+<p>
+  <strong>Video url:</strong>
+  <%= @lesson.video_url %>
+</p>
+
+<p>
+  <strong>Image url:</strong>
+  <%= @lesson.image_url %>
+</p>
+
+<%= link_to 'Edit', edit_lesson_path(@lesson) %> |
+<%= link_to 'Back', lessons_path %>
