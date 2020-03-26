@@ -7,6 +7,17 @@
 	"settings": {
 		"workbench.colorCustomizations": {	
 			"statusBar.background": "#700505"
-		}
+		},
+		"sqltools.connections": [
+			{
+				"database": "mc_wiki_development",
+				"dialect": "PostgreSQL",
+				"name": "mc_wiki_development",
+				"password": "linux",
+				"port": 5432,
+				"server": "localhost",
+				"username": "postgres"
+			}
+		]
 	}
 }
