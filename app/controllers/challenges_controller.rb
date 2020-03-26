@@ -16,7 +16,6 @@ class ChallengesController < ApplicationController
 
     def edit
       @challenge = Challenge.find(params[:id])
-      @lessons = Lessons.all
     end
 
     def create
