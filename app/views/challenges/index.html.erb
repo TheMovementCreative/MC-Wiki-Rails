@@ -2,7 +2,7 @@
   <div class="container-fluid">
     <span class="navbar-brand mb-0 h1"> Movement Creative Challenges</span>
     <div class="navbar-nav ml-auto">
-      <button type="button" class="btn nav-button"><%= link_to 'New Challenge', new_challenge_path %></button>
+      <button type="button" class="btn nav-button tmc-bg-dk-blu"><%= link_to 'New Challenge', new_challenge_path %></button>
     </div>
   </div>
 </nav>
@@ -18,10 +18,10 @@
                       <p><ul class="list-group list-group-flush">
                         <li class="list-group-item"><small class = "muted text">Space: <%= challenge.space %></small></li>
                         <li class="list-group-item"><small class = "muted text">Tools: <%= challenge.tools %></small></li>
-                        <li class="list-group-item"><small class = "muted text">Movements & Actions: <%= challenge.actions_movements %></small></li>
+                        <li class="list-group-item"><small class = "muted text">Skills: <%= challenge.actions_movements %></small></li>
                       </ul>
                       </p>
-                      <div><a href=<%= challenge_path(challenge)%> class="btn btn-primary">View</a></p></div>
+                  <div><a href=<%= challenge_path(challenge)%> class="btn btn-primary">View</a></p></div>
 
                   </div>
               </div>

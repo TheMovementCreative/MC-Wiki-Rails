@@ -1,5 +1,6 @@
 <p id="notice"><%= notice %></p>
 
+
 <div class="container-fluid" style = "background-color: #00A1E0; color: white; display: flex; align-items: center;">
   <span>
     <h3 style= "color: white;"><%= @lesson.lesson_name %> </h3>
@@ -72,7 +73,7 @@
             <ul class="list-group list-group-flush" style =  "font-size: 14px">
                 <li class="list-group-item"><p>Space:</p> <%= challenge.space %></li>
                 <li class="list-group-item"><p>Tools:</p> <%= challenge.tools %></li>
-                <li class="list-group-item"><p>Movements:</p> <%= challenge.actions_movements %></li>
+                <li class="list-group-item"><p>Skills:</p> <%= challenge.actions_movements %></li>
                 <li class="list-group-item"><p>Challenge:</p> <%= challenge.challenge %></li>
                 <li class="list-group-item"><p>Goals:</p> <%= challenge.goal %></li>
             </ul>
@@ -89,7 +90,7 @@
           <br>
           <div class="collapse" id="collapseRules<%= index %>">
           <hr>
-              <p>
+              <p style= "white-space: pre-line;">
                 <%= challenge.rules %>
               </p>
         </div>
@@ -116,5 +117,5 @@
   <%= @lesson.image_url %>
 </p>
 
-<%= link_to 'Edit', edit_lesson_path(@lesson) %> |
+
 <%= link_to 'Back', lessons_path %>
