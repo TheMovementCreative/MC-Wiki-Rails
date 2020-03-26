@@ -1,13 +1,16 @@
 @import "bootstrap";
+@import "color_palette.scss";
+
+
 
 h1 { color: #00A1E0; }
 p{color: #2D465A; }
-h3 {color: #6C6C6C;}
-li {color: #6C6C6C;}
+h3 {color: $grey;}
+li {color: $grey;}
 a{color: #E76F27;}
 strong {color: #F43E2F; }
-.tmc-bg-grey{background-color: #6C6C6C;}
-.tmc-bg-dk-blu{background-color: #2D465A;}
+.tmc-bg-grey{background-color: $grey;}
+.tmc-bg-dk-blu{background-color: $dk-blue;}
 .tmc-orng{color: #E76F27; }
 .tmc-white{color: white;}
 .tmc-dk-blu{color: #2D465A;}
@@ -18,3 +21,4 @@ strong {color: #F43E2F; }
     background-color: white;
     color: white
 }
+

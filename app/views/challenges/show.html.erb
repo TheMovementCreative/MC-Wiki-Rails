@@ -21,7 +21,7 @@
         <ul class="list-group list-group-flush" style =  "font-size: 14px">
             <li class="list-group-item"><p>Space:</p> <%= @challenge.space %></li>
             <li class="list-group-item"><p>Tools:</p> <%= @challenge.tools %></li>
-            <li class="list-group-item"><p>Movements:</p> <%= @challenge.actions_movements %></li>
+            <li class="list-group-item"><p>Skills:</p> <%= @challenge.actions_movements %></li>
         </ul>
       </div>
       <div class="container-fluid col-sm" style: "display: flex; justify-content: flex-end; align-items: center;">
@@ -35,17 +35,17 @@
     </div>
     <div class="col-sm" style = "display:flex; justify-content: center; flex-direction: column">
       <p>
-        <strong>Challenge:</strong>
+        <strong>Challenge: </strong>
         <%= @challenge.challenge %>
       </p>
       <p>
-        <strong>Goal</strong>
+        <strong>Goal: </strong>
         <%= @challenge.goal %>
       </p>
     </div>
   </div>
   <hr>
-  <div class="container row" style="padding-top:25px;">
+  <div class="container row" style="padding-top:25px; white-space: pre-line;">
     <p>
     <strong>Rules:</strong>
     <%= @challenge.rules %>

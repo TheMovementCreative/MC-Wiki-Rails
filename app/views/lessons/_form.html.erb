@@ -1,4 +1,6 @@
 <%= form_with(model: lesson, local: true) do |form| %>
+
+ 
   <% if lesson.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(lesson.errors.count, "error") %> prohibited this lesson from being saved:</h2>
@@ -42,8 +44,15 @@
   </div>
 
   <div class="field">
+
+
+
+
     <%= form.label :activities %>
     <%= form.text_field :activities %>
+
+
+    
   </div>
 
   <div class="field">

@@ -10,11 +10,13 @@ class LessonsController < ApplicationController
   # GET /lessons/1
   # GET /lessons/1.json
   def show
+
   end
 
   # GET /lessons/new
   def new
     @lesson = Lesson.new
+    @challenges = Challenge.all
   end
 
   # GET /lessons/1/edit
