@@ -47,12 +47,43 @@
 
 
 
+    <% @lesson.challenges.each_with_index do |challenge,index| %>
+  <div class="dropdown">
+    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      Activity <%= (index +1) %>: <%= challenge.activity_title %>
+    </button>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
 
-    <%= form.label :activities %>
-    <%= form.text_field :activities %>
+        <% @challenges.each do |availible_challenge| %>
+        <a class="dropdown-item" href="#"><%= availible_challenge.activity_title %></a>
+        <% end %>
+      </div>
 
 
+      <div class="input-group">
+  <select class="custom-select" id="inputGroupSelect04">
+    <option selected>Choose...</option>
+    <% @challenges.each do |availible_challenges| %>
+    <option value="<%= (index + 1)%>"> <%= availible_challenges.activity_title %> </option>
+    <% end %>
+  </select>
+  <div class="input-group-append">
+    <button class="btn btn-outline-secondary" type="button">Button</button>
+  </div>
+</div>
+  </div>
     
+    <% end %>
+    
+    <div class="field">
+    <% @lesson.challenges.each_with_index do |challenge,index| %>
+      <div class = "container">
+      <%= form.label :@lesson.challenges[index] %><br />
+      <%= form.select :challenge_id, options_for_select(Challenge.all.map{|c|[c.activity_title, c.id]}) %>
+    </div>
+    <% end %>
+  </div>
+
   </div>
 
   <div class="field">
