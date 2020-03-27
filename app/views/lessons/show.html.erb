@@ -30,12 +30,12 @@
 
 <br>
 
-<div class= "container-fluid" style="display: flex; justify-content: center;">
+<div class= "container-fluid row" style="display: flex; justify-content: center;">
   <div class="container-fluid col-sm" style: "display: flex; justify-content: flex-end; align-items: center;">
         <iframe width="560" height="315" src="<%=  @lesson.video_url.blank? ? 'https://www.youtube.com/embed/JVN7OeOLMvM' : @lesson.video_url %>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
   </div>
   <div class="container-fluid col-sm" style= "display: flex; justify-content: flex-start; align-items: center;">
-        <%= @lesson.details %>
+        <p><strong> Overview: </strong><br> <%= @lesson.details %></p>
   </div>
   
 </div>
@@ -62,13 +62,17 @@
     </div>
 
     <button class="btn tmc-bg-dk-blu tmc-white" type="button" data-toggle="collapse" data-target="#collapse-activity<%= index %>" aria-expanded="false" aria-controls="collapse-activity<%= index %>">
-    See Acticity
-    </button>  
+    See Activity
+    </button> 
+    
 
       <div class="collapse" id= "collapse-activity<%= index %>">
-        
+        <br>
         <div class="containter-fluid row" style = "overflow: auto; max-width: 100%; padding: 00px 0px; display: flex; justify-content: space-between;">
-          <div class="col-sm">  
+          <div class="container-fluid col-sm" style: "display: flex; justify-content: flex-end; align-items: center;">
+          <iframe width="560" height="315" src="<%=  challenge.video_url.blank? ? 'https://www.youtube.com/embed/JVN7OeOLMvM' : challenge.video_url %>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div> 
+        <div class="col-sm">  
             <ul class="list-group list-group-flush" style =  "font-size: 14px">
                 <li class="list-group-item"><p>Space:</p> <%= challenge.space %></li>
                 <li class="list-group-item"><p>Tools:</p> <%= challenge.tools %></li>
@@ -77,11 +81,11 @@
                 <li class="list-group-item"><p>Goals:</p> <%= challenge.goal %></li>
             </ul>
           </div>
-          <div class="container-fluid col-sm" style: "display: flex; justify-content: flex-end; align-items: center;">
-          <iframe width="560" height="315" src="<%=  challenge.video_url.blank? ? 'https://www.youtube.com/embed/JVN7OeOLMvM' : challenge.video_url %>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-          </div>
+        
         </div>
+        <br>
         <div class="container-fluid" style="display: flex; justify-content: center;">
+        
           <button class="btn tmc-bg-dk-blu tmc-white" type="button" data-toggle="collapse" data-target="#collapseRules<%= index %>" aria-expanded="false" aria-controls="collapseRules<%= index %>">
             See Rules
           </button>
@@ -90,6 +94,8 @@
           <div class="collapse" id="collapseRules<%= index %>">
           <hr>
               <p style= "white-space: pre-line;">
+              <strong> Rules: </strong>
+              
                 <%= challenge.rules %>
               </p>
         </div>
@@ -105,5 +111,11 @@
     
   <% end %>
 <br>
-
-<%= link_to 'Back', lessons_path %> 
+<nav class="navbar navbar-expand-md navbar-dark mb-3 tmc-bg-dk-blu" style="">
+  <div class="container-fluid">
+    <span class="navbar-brand mb-0 h1"> <%= link_to 'Back', lessons_path %></span>
+    <div class="navbar-nav ml-auto">
+    <%= link_to 'Edit', edit_lesson_path(@lesson) %>
+    </div>
+  </div>
+</nav>

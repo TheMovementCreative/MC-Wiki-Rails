@@ -1,24 +1,26 @@
 @import "bootstrap";
 @import "color_palette.scss";
+@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
 
 
 
-h1 { color: #00A1E0; }
-p{color: #2D465A; }
-h3 {color: $grey;}
-li {color: $grey;}
-a{color: #E76F27;}
-strong {color: $dk-blue; }
+h1 { color: #00A1E0; font-family: 'Montserrat', sans-serif;}
+p{color: #2D465A; font-family: 'Montserrat', sans-serif;}
+h3 {color: $grey;font-family: 'Montserrat', sans-serif;}
+li {color: $grey;font-family: 'Montserrat', sans-serif;}
+a{color: #E76F27;font-family: 'Montserrat', sans-serif;}
+strong {color: $dk-blue; font-family: 'Montserrat', sans-serif;}
 .tmc-bg-grey{background-color: $grey;}
 .tmc-bg-dk-blu{background-color: $dk-blue;}
-.tmc-orng{color: #E76F27; }
-.tmc-white{color: white;}
-.tmc-dk-blu{color: #2D465A;}
-.tmc-blu{color: #00A1E0;}
+.tmc-orng{color: #E76F27; font-family: 'Montserrat', sans-serif;}
+.tmc-white{color: white;font-family: 'Montserrat', sans-serif;}
+.tmc-dk-blu{color: #2D465A; font-family: 'Montserrat', sans-serif;}
+.tmc-blu{color: #00A1E0; font-family: 'Montserrat', sans-serif;}
 
 .nav-button {
     border: 2px solid white;
     background-color: white;
-    color: white
+    color: white;
+    font-family: 'Montserrat', sans-serif;
 }
 
