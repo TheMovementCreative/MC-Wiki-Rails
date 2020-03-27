@@ -48,8 +48,7 @@
 </div>
 <hr>
 
-  <% @lesson.activities.each_with_index do |activity,index| %>
-    <% challenge = @challenges.find_by(activity_title: activity) %>  
+  <% @lesson.challenges.each_with_index do |challenge,index| %> 
 
     <div class="container-fluid"  style="padding: 0px 20px;" >
     <h3>
@@ -105,17 +104,6 @@
 
     
   <% end %>
-<br><br><br>
+<br>
 
-<p>
-  <strong>Video url:</strong>
-  <%= @lesson.video_url %>
-</p>
-
-<p>
-  <strong>Image url:</strong>
-  <%= @lesson.image_url %>
-</p>
-
-
-<%= link_to 'Back', lessons_path %>
+<%= link_to 'Back', lessons_path %> 

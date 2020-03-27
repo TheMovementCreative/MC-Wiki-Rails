@@ -1,3 +1,4 @@
 class Lesson < ApplicationRecord
-    belongs_to :challenge
+    has_many :lesson_plans
+    has_many :challenges, through: :lesson_plans
 end
