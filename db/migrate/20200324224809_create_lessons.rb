@@ -10,7 +10,6 @@ class CreateLessons < ActiveRecord::Migration[6.0]
       t.string :activities, array:true, default: []
       t.string :video_url
       t.string :image_url
-
       t.timestamps
     end
   end
