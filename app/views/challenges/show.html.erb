@@ -17,8 +17,8 @@
       </p>
     </div>
     <div class="containter-fluid row" style = "overflow: auto; max-width: 100%; padding: 00px 0px; display: flex; justify-content: space-between;">
-    <div class="col-sm">
-      <iframe width="560" height="315" src="<%=  @challenge.video_url.blank? ? 'https://www.youtube.com/embed/JVN7OeOLMvM' : @challenge.video_url %>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <div class="embed-responsive embed-responsive-16by9 col-sm" >
+      <iframe class="embed-responsive-item" src="<%=  @challenge.video_url.blank? ? 'https://www.youtube.com/embed/JVN7OeOLMvM' : @challenge.video_url %>"  allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </div>  
   
     <div class="col-sm">  

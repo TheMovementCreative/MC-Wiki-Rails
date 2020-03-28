@@ -31,9 +31,9 @@
 <br>
 
 <div class= "container-fluid row" style="display: flex; justify-content: center;">
-  <div class="container-fluid col-sm" style: "display: flex; justify-content: flex-end; align-items: center;">
-        <iframe width="560" height="315" src="<%=  @lesson.video_url.blank? ? 'https://www.youtube.com/embed/JVN7OeOLMvM' : @lesson.video_url %>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-  </div>
+    <div class="embed-responsive embed-responsive-16by9 col-sm" >
+      <iframe class="embed-responsive-item" src="<%=  @lesson.video_url.blank? ? 'https://www.youtube.com/embed/JVN7OeOLMvM' : @lesson.video_url %>"  allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
   <div class="container-fluid col-sm" style= "display: flex; justify-content: flex-start; align-items: center;">
         <p><strong> Overview: </strong><br> <%= @lesson.details %></p>
   </div>
@@ -69,8 +69,8 @@
       <div class="collapse" id= "collapse-activity<%= index %>">
         <br>
         <div class="containter-fluid row" style = "overflow: auto; max-width: 100%; padding: 00px 0px; display: flex; justify-content: space-between;">
-          <div class="container-fluid col-sm" style: "display: flex; justify-content: flex-end; align-items: center;">
-          <iframe width="560" height="315" src="<%=  challenge.video_url.blank? ? 'https://www.youtube.com/embed/JVN7OeOLMvM' : challenge.video_url %>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          <div class="embed-responsive embed-responsive-16by9 col-sm" >
+           <iframe class="embed-responsive-item" src="<%=  challenge.video_url.blank? ? 'https://www.youtube.com/embed/JVN7OeOLMvM' : challenge.video_url %>"  allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
           </div> 
         <div class="col-sm">  
             <ul class="list-group list-group-flush" style =  "font-size: 14px">
