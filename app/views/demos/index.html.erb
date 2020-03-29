@@ -1,0 +1,36 @@
+<div class="container-fluid tmc-bg-dk-blu tmc-blu" style="padding: 10px;">
+    <span> <h2> Sample Course Plan </h2> </span>
+</div>
+
+<br>
+
+<div class="container-fluid">
+<% @lessons.each_with_index do |lesson, index| %>
+
+    <div class="container-fluid" style = "background-color: #00A1E0; color: white; display: flex; align-items: center;">
+        <span>
+            <h3 style= "color: white;">Day <%= (index +1) %>: <%= lesson.lesson_name %> </h3>
+            <sup><em> By: <%= lesson.author %> </em></sup>
+        </span>
+    </div>
+
+    <br>
+
+    <%= render :partial => 'shared/lesson_info', locals: {lesson: lesson}%>
+
+    <br>
+    <div class="container-fluid">
+    <button class="btn tmc-bg-dk-blu tmc-white" type="button" data-toggle="collapse" data-target="#collapse-lesson<%= index %>" aria-expanded="false" aria-controls="collapse-lesson<%= index %>">
+        See Lesson
+    </button> 
+    </div>
+    <hr>
+
+    <div class="collapse container-fluid" id= "collapse-lesson<%= index %>">
+        <%= render :partial => 'shared/lesson_frame', locals: {lesson: lesson}%>
+    </div>
+
+    <br>
+
+<% end %>
+</div>
