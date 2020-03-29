@@ -1,116 +1,22 @@
 <p id="notice"><%= notice %></p>
 
-
 <div class="container-fluid" style = "background-color: #00A1E0; color: white; display: flex; align-items: center;">
   <span>
-    <h3 style= "color: white;"><%= @lesson.lesson_name %> </h3>
-    <sup><em> By: <%= @lesson.author %> </em></sup>
+    <h3 style= "color: white;"><%= lesson.lesson_name %> </h3>
+    <sup><em> By: <%= lesson.author %> </em></sup>
   </span>
 </div>
 
 <br>
 
-<div class= "container-fluid">
-  <p>
-    
-    <b><%= @lesson.purpose %></b>
-  </p>
-</div>
+<%= render :partial => 'shared/lesson_head', locals: {lesson: @lesson}%>
 
 <hr>
-
-<div class = "container-fluid">
-
-  <p>
-    <strong>Tools Required:</strong>
-    <%= @lesson.tools %>
-  </p>
-
-</div>
 
 <br>
 
-<div class= "container-fluid row" style="display: flex; justify-content: center;">
-    <div class="embed-responsive embed-responsive-16by9 col-sm" >
-      <iframe class="embed-responsive-item" src="<%=  @lesson.video_url.blank? ? 'https://www.youtube.com/embed/JVN7OeOLMvM' : @lesson.video_url %>"  allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-    </div>
-  <div class="container-fluid col-sm" style= "display: flex; justify-content: flex-start; align-items: center;">
-        <p><strong> Overview: </strong><br> <%= @lesson.details %></p>
-  </div>
-  
-</div>
-<hr>
-<div class="container-fluid">
-  <h3>
-  Recomended Warm Up:
-  <%= @lesson.warm_up %>
-  </h3>
-</div>
-<hr>
+<%= render :partial => 'shared/lesson_frame', locals: {lesson: @lesson}%>
 
-  <% @lesson.challenges.each_with_index do |challenge,index| %> 
-
-    <div class="container-fluid"  style="padding: 0px 20px;" >
-    <h3>
-      Activity <%= (index + 1) %>: <%= challenge.activity_title %> 
-
-    </h3>
-    <div class="containter-fluid" style = " background-color: #00A1E0; color:white;">
-          <p style="color:white; padding-left: 10px; display: flex; align-items: center; justify-content: flex-start;">
-            <%= challenge.purpose %>
-          </p>
-    </div>
-
-    <button class="btn tmc-bg-dk-blu tmc-white" type="button" data-toggle="collapse" data-target="#collapse-activity<%= index %>" aria-expanded="false" aria-controls="collapse-activity<%= index %>">
-    See Activity
-    </button> 
-    
-
-      <div class="collapse" id= "collapse-activity<%= index %>">
-        <br>
-        <div class="containter-fluid row" style = "overflow: auto; max-width: 100%; padding: 00px 0px; display: flex; justify-content: space-between;">
-          <div class="embed-responsive embed-responsive-16by9 col-sm" >
-           <iframe class="embed-responsive-item" src="<%=  challenge.video_url.blank? ? 'https://www.youtube.com/embed/JVN7OeOLMvM' : challenge.video_url %>"  allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-          </div> 
-        <div class="col-sm">  
-            <ul class="list-group list-group-flush" style =  "font-size: 14px">
-                <li class="list-group-item"><p>Space:</p> <%= challenge.space %></li>
-                <li class="list-group-item"><p>Tools:</p> <%= challenge.tools %></li>
-                <li class="list-group-item"><p>Skills:</p> <%= challenge.actions_movements %></li>
-                <li class="list-group-item"><p>Challenge:</p> <%= challenge.challenge %></li>
-                <li class="list-group-item"><p>Goals:</p> <%= challenge.goal %></li>
-            </ul>
-          </div>
-        
-        </div>
-        <br>
-        <div class="container-fluid" style="display: flex; justify-content: center;">
-        
-          <button class="btn tmc-bg-dk-blu tmc-white" type="button" data-toggle="collapse" data-target="#collapseRules<%= index %>" aria-expanded="false" aria-controls="collapseRules<%= index %>">
-            See Rules
-          </button>
-          </div>
-          <br>
-          <div class="collapse" id="collapseRules<%= index %>">
-          <hr>
-              <p style= "white-space: pre-line;">
-              <strong> Rules: </strong>
-              
-                <%= challenge.rules %>
-              </p>
-        </div>
-
-      </div>
-
-    </div>
-    <hr>
-
-
-
-
-    
-  <% end %>
-<br>
 <nav class="navbar navbar-expand-md navbar-dark mb-3 tmc-bg-dk-blu" style="">
   <div class="container-fluid">
     <span class="navbar-brand mb-0 h1"> <%= link_to 'Back', lessons_path %></span>
