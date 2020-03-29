@@ -1,4 +1,4 @@
-<div class="containter-fluid row" style = "overflow: auto; max-width: 100%; padding: 00px 0px; display: flex; justify-content: space-between;">
+<div class="containter-fluid row" style = "overflow: auto; max-width: 100%;  display: flex; justify-content: space-between;">
     <div class="embed-responsive embed-responsive-16by9 col-sm" >
         <iframe class="embed-responsive-item" src="<%=  challenge.video_url.blank? ? 'https://www.youtube.com/embed/JVN7OeOLMvM' : challenge.video_url %>"  allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </div> 
@@ -14,14 +14,16 @@
 </div>
 
 <br>
+
 <div class="container-fluid" style="display: flex; justify-content: center;">
 
-  <button class="btn tmc-bg-dk-blu tmc-white" type="button" data-toggle="collapse" data-target="#collapseRules<%= index %>" aria-expanded="false" aria-controls="collapseRules<%= index %>">
-    See Rules
-  </button>
-  </div>
+  <button class="btn tmc-bg-dk-blu tmc-white btn-block btn-sm" type="button" data-toggle="collapse" data-target="#collapseRules<%= index %>" aria-expanded="false" aria-controls="collapseRules<%= index %>">
+  <div style="white-space: pre;"><sub><small> &#x25bc;</small></sub>           See Rules            <sub><small>&#x25bc;</small></sub></div>
+ </button>
+
+</div>
   <br>
-  <div class="collapse" id="collapseRules<%= index %>">
+<div class="collapse" id="collapseRules<%= index %>">
   <hr>
       <p style= "white-space: pre-line;">
       <strong> Rules: </strong>

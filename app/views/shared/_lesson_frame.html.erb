@@ -22,9 +22,10 @@
 
 <hr>
 
+<div class="container-fluid">
 <% lesson.challenges.each_with_index do |challenge,index| %> 
 
-  <div class="container-fluid"  style="padding: 0px 20px;" >
+  
     <h3>
       Activity <%= (index + 1) %>: <%= challenge.activity_title %> 
     </h3>
@@ -35,8 +36,8 @@
       </p>
     </div>
 
-    <button class="btn tmc-bg-dk-blu tmc-white" type="button" data-toggle="collapse" data-target="#collapse-activity<%= index %>" aria-expanded="false" aria-controls="collapse-activity<%= index %>">
-    See Activity
+    <button class="btn tmc-bg-dk-blu tmc-white btn-block btn-sm" type="button" data-toggle="collapse" data-target="#collapse-activity<%= index %>" aria-expanded="false" aria-controls="collapse-activity<%= index %>">
+    <div style="white-space: pre;"><sub><small> &#x25bc;</small></sub>           See Activity            <sub><small>&#x25bc;</small></sub></div>
     </button> 
     
     <div class="collapse container-fluid" id= "collapse-activity<%= index %>">
@@ -44,9 +45,9 @@
       <%= render :partial => 'shared/challenge_frame', locals: {challenge: challenge, index: index} %>
     </div>
 
-  </div>
+ 
 
   <hr>
+ 
 <% end %>
-
-<br>
+</div>
