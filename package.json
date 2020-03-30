@@ -1,6 +1,7 @@
 {
   "name": "mc_wiki_rails",
   "private": true,
+  "author" : "Giuseppe Valentino (zepvalue)",
   "license":"MC",
   "dependencies": {
     "@rails/actioncable": "^6.0.0",

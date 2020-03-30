@@ -14,5 +14,11 @@ class Ability
       can :manage, :dashboard    
     end
 
+    if user.user_role?
+      can :access, :dashboard 
+    end
+
+
+
   end
 end

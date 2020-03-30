@@ -1,3 +1,22 @@
+<nav class="navbar navbar-expand-md navbar-dark bg-dark mb-3">
+  <div class="container-fluid">
+    <span class="navbar-brand mb-0 h1"> Movement Creative Challenges</span>
+    <div class="navbar-nav ml-auto">
+        <% if current_user.nil? %>
+            <span>
+                <button type="button" class="btn nav-button tmc-bg-dk-blu"><%= link_to new_user_registration_path, class: 'login-button' do %>Sign Up<% end %></button>
+                <button type="button" class="btn nav-button tmc-bg-dk-blu"><%= link_to new_user_session_path, class: 'login-button' do %>Sign in<% end %></button>
+            </span>
+        <% else %>
+            <span>
+                <button type="button" class="btn nav-button tmc-bg-dk-blu"><%= link_to challenges_index_path, class: 'login-button' do %>Go to App<% end %></button>
+                <button type="button" class="btn nav-button tmc-bg-dk-blu"><%= link_to destroy_user_session_path, method: :delete do %>Log out<% end %></button>
+            </span>    
+        <% end %>
+    </div>
+  </div>
+</nav>
+
 <div class="container-fluid tmc-bg-dk-blu tmc-blu" style="padding: 10px;">
     <span> 
     <h2> <img class="img-fluid" src="<%= image_path('MOVE-MORE-Logo-Alpha.png') %>" alt="Card image cap" style="height: auto; max-width: 20%;">
@@ -9,7 +28,6 @@ Sample Course Plan </h2>
 <div class="container-fluid" id="acrd" >
 <% @lessons.each_with_index do |lesson, index| %>
 <div class= "container-fluid">
-
     
     <div class="container-fluid" style = "background-color: #00A1E0; color: white; display: flex; align-items: center;">
         <span>

@@ -1,5 +1,8 @@
 class ChallengesController < ApplicationController
   load_and_authorize_resource
+
+  before_action :authenticate_user!
+
   
     def index
       if current_user
