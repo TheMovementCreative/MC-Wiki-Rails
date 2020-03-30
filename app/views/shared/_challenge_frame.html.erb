@@ -17,13 +17,13 @@
 
 <div class="container-fluid" style="display: flex; justify-content: center;">
 
-  <button class="btn tmc-bg-dk-blu tmc-white btn-block btn-sm" type="button" data-toggle="collapse" data-target="#collapseRules<%= index %>" aria-expanded="false" aria-controls="collapseRules<%= index %>">
+  <button class="btn tmc-bg-dk-blu tmc-white  btn-sm" type="button" data-toggle="collapse" data-target="#collapseRules<%= index %><%= challenge.id %>" aria-expanded="false" aria-controls="collapseRules<%= index %><%= challenge.id %>">
   <div style="white-space: pre;"><sub><small> &#x25bc;</small></sub>           See Rules            <sub><small>&#x25bc;</small></sub></div>
  </button>
 
 </div>
   <br>
-<div class="collapse" id="collapseRules<%= index %>">
+<div class="collapse" id="collapseRules<%= index %><%= challenge.id %>">
   <hr>
       <p style= "white-space: pre-line;">
       <strong> Rules: </strong>

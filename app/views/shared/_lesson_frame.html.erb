@@ -36,11 +36,11 @@
       </p>
     </div>
 
-    <button class="btn tmc-bg-dk-blu tmc-white btn-block btn-sm" type="button" data-toggle="collapse" data-target="#collapse-activity<%= index %>" aria-expanded="false" aria-controls="collapse-activity<%= index %>">
+    <button class="btn tmc-bg-dk-blu tmc-white  btn-sm" type="button" data-toggle="collapse" data-target="#collapse-activity<%= index %><%= challenge.id %>" aria-expanded="false" aria-controls="collapse-activity<%= index %><%= challenge.id %>">
     <div style="white-space: pre;"><sub><small> &#x25bc;</small></sub>           See Activity            <sub><small>&#x25bc;</small></sub></div>
     </button> 
     
-    <div class="collapse container-fluid" id= "collapse-activity<%= index %>">
+    <div class="collapse container-fluid" id= "collapse-activity<%= index %><%= challenge.id %>">
       <br>      
       <%= render :partial => 'shared/challenge_frame', locals: {challenge: challenge, index: index} %>
     </div>
