@@ -1,0 +1,44 @@
+<div class="container-fluid tmc-bg-dk-blu tmc-blu" style="padding: 10px;">
+    <span> 
+    <h2> <img class="img-fluid" src="<%= image_path('MOVE-MORE-Logo-Alpha.png') %>" alt="Card image cap" style="height: auto; max-width: 20%;">
+Sample Course Plan </h2> 
+    </span>
+</div>
+
+<br>
+<div class="container-fluid" id="acrd" >
+<% @lessons.each_with_index do |lesson, index| %>
+<div class= "container-fluid">
+
+    
+    <div class="container-fluid" style = "background-color: #00A1E0; color: white; display: flex; align-items: center;">
+        <span>
+            <h3 style= "color: white;">Day <%= (index +1) %>: <%= lesson.lesson_name %> </h3>
+            <sup><em> By: <%= lesson.author %> </em></sup>
+        </span>
+    </div>
+
+    <br>
+
+    <%= render :partial => 'shared/lesson_info', locals: {lesson: lesson}%>
+
+    <br>
+
+    <div class="container-fluid">
+    <button class="btn tmc-bg-dk-blu tmc-white btn-block btn-sm" type="button" data-toggle="collapse"  data-target="#collapse-lesson<%= index %>" aria-expanded="false" aria-controls="collapse-lesson<%= index %>">
+        <div style="white-space: pre;"><sub><small> &#x25bc;</small></sub>           See Lesson            <sub><small>&#x25bc;</small></sub></div>
+    </button> 
+    </div>
+
+    <hr>
+
+    <div class="collapse container-fluid" id= "collapse-lesson<%= index %>" data-parent="#acrd">
+        <%= render :partial => 'shared/lesson_frame', locals: {lesson: lesson} %>
+    </div>
+
+    <br>
+
+
+</div>
+<% end %>
+</div>

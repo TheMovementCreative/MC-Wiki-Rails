@@ -11,4 +11,7 @@ Rails.application.routes.draw do
   get'lessons/index'
   resources :lessons
   
+  get'demo/index'
+  resources :demos
+
 end
