@@ -1,8 +1,16 @@
+<% if current_user.nil? %>
+	<%= link_to new_user_session_path, class: 'login-button' do %>Sign in<% end %>
+<% else %>
+	<%= link_to destroy_user_session_path, method: :delete do %>Log out<% end %>
+<% end %>
+
+
 <nav class="navbar navbar-expand-md navbar-dark bg-dark mb-3">
   <div class="container-fluid">
     <span class="navbar-brand mb-0 h1"> Movement Creative Challenges</span>
     <div class="navbar-nav ml-auto">
       <button type="button" class="btn nav-button tmc-bg-dk-blu"><%= link_to 'New Challenge', new_challenge_path %></button>
+     
     </div>
   </div>
 </nav>
@@ -31,6 +39,3 @@
 </div>
 
  
-
-
-<button type="button" class="btn btn-outline-primary"><%= link_to 'New Challenge', new_challenge_path %></button>
