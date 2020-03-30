@@ -2,14 +2,14 @@
 
 <div class="container-fluid" style = "background-color: #00A1E0; color: white; display: flex; align-items: center;">
   <span>
-    <h3 style= "color: white;"><%= lesson.lesson_name %> </h3>
-    <sup><em> By: <%= lesson.author %> </em></sup>
+    <h3 style= "color: white;"><%= @lesson.lesson_name %> </h3>
+    <sup><em> By: <%= @lesson.author %> </em></sup>
   </span>
 </div>
 
 <br>
 
-<%= render :partial => 'shared/lesson_head', locals: {lesson: @lesson}%>
+<%= render :partial => 'shared/lesson_info', locals: {lesson: @lesson}%>
 
 <hr>
 
