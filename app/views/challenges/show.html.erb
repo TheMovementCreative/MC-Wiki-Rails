@@ -1,12 +1,5 @@
+<%= render :partial => 'shared/nav_top' %>
 
-<nav class="navbar navbar-expand-md navbar-dark bg-dark mb-3">
-  <div class="container-fluid">
-    <span class="navbar-brand mb-0 h1"> Movement Creative Challenges</span>
-    <div class="navbar-nav ml-auto">
-      <button type="button" class="btn nav-button"><%= link_to 'New Challenge', new_challenge_path %></button>
-    </div>
-  </div>
-</nav>
   <div class="container-fluid" style="padding: 0px 20px;" >
     <h3>
       <%= @challenge.activity_title %>
