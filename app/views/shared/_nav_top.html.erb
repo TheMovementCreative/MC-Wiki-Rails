@@ -1,11 +1,32 @@
-<nav class="navbar navbar-expand-md navbar-dark bg-dark mb-3">
+<nav class="navbar navbar-expand-md navbar-dark bg-dark mb-3 sticky-top">
 
 
 
   <div class="container-fluid">
   <img class="img-fluid" src="<%= image_path('MOVE-MORE-Logo-Invert-Alpha.png') %>" alt="Responsive Image" style="height: 50px; max-width: 100%;">
     <span class="navbar-brand mb-0 h1"> 
+
     </span>
+
+    <div class ="navbar-nav mr-auto ">
+    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+    <li class="nav-item"> 
+    <a class="nav-link" href="/"> Home </a>
+    </li>
+    <% if !current_user.nil? %>
+    <li class="nav-item"> 
+    <a class="nav-link" href="/challenges/index"> Challenges </a>
+    </li>
+    <li class="nav-item"> 
+    <a class="nav-link" href="/lessons/index"> Lessons </a>
+    </li>
+    <li class="nav-item disabled"> 
+    <a class="nav-link" href="#"> Courses </a>
+    </li>
+    <% end %>
+    </ul>
+    </div>
+
     <div class="navbar-nav ml-auto">
         <% if current_user.nil? %>
             <span>
