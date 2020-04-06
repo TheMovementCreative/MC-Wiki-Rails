@@ -1,29 +1,38 @@
-<h2>Sign up</h2>
+<div class="container-fluid tmc-bg-blu" style="height: 100vh; width: 100vw; display: flex; align-items: center;">
+<div class="container-fluid vertical-center text-center tmc-bg-dk-blu tmc-white" style="min-width:260px; max-width: 270px; box-shadow: 10px 10px 5px black; ">
+
+<img class="img-fluid" src="<%= image_path('MOVE-MORE-Logo-Invert-Alpha.png') %>"  style="height: auto; max-width: 100pw;"></img>
+
+<h2 class="tmc-blu text-left">Sign up:</h2>
+<br>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
 
-  <div class="field">
+  <div class="field text-left">
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
   </div>
-
-  <div class="field">
+  <br>
+  <div class="field text-left">
     <%= f.label :password %>
     <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
+    <small><em>(<%= @minimum_password_length %> characters minimum)</em></small>
     <% end %><br />
     <%= f.password_field :password, autocomplete: "new-password" %>
   </div>
-
-  <div class="field">
+  <br>
+  <div class="field text-left">
     <%= f.label :password_confirmation %><br />
     <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
   </div>
-
+  <br>
   <div class="actions">
     <%= f.submit "Sign up" %>
   </div>
 <% end %>
-
+<br>
+<br>
 <%= render "devise/shared/links" %>
+</div>
+</div>
