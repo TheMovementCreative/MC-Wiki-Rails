@@ -4,7 +4,7 @@ class Ability
   include CanCan::Ability
 
   def initialize(user)
-    can :manage, :all
+    can :read, :all
     if user.superadmin_role?
       p "SUPER ADMIN"
       can :manage, User
