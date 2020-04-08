@@ -1,23 +1,30 @@
-import React from "react"
+import React, { useState } from "react"
 import PropTypes from "prop-types"
+import Select from 'react-select'
+import Zep from './Zep'
 
-const HelloWorld = ({greetings}) => {
+
+
+const HelloWorld = ({challenges}) => {
+  const [peter, setPeter ] = useState("PJ")
+
+  const options = [
+    { value: 'chalk', label: 'chalk' },
+    { value: 'strawberry', label: 'Strawberry' },
+    { value: 'vanilla', label: 'Vanilla' },
+  ];
+
   return (
-    <>{greetings}</>
+    <div>
+      {peter}
+      <Zep />
+      <button onClick={() => setPeter("ZEP")}>Click </button> 
+      <Select options={options} />
+    </div>
   )
 }
 
-// class HelloWorld extends React.Component {
-//   render () {}
-//     return (
-//       <React.Fragment>
-//         Greeting: {this.props.greeting}
-//       </React.Fragment>
-//     );
-//   }
-// }
-
 HelloWorld.propTypes = {
-  greeting: PropTypes.string
+  challenges: PropTypes.Array
 };
 export default HelloWorld
