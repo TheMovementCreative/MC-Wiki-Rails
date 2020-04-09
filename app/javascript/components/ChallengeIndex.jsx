@@ -8,6 +8,7 @@ const ChallengeIndex = ({ challenges }) => {
   const [searchQuerySkill, setSearchQuerySkill] = useState("");
   const [searchQuerySpace, setSearchQuerySpace] = useState("");
   const [searchQueryTools, setSearchQueryTools] = useState("");
+  const [filterVideo, setFilterVideo] = useState(true);
 
   let filteredChallenges = challenges.filter((challenge) => {
     if (!searchQueryTitle){
@@ -68,9 +69,18 @@ const ChallengeIndex = ({ challenges }) => {
             );
           }
         });}
+        if(filteredChallenges && filterVideo){
+            filteredChallenges = filteredChallenges.filter((challenge) => {
+     
+                return (challenge.video_url 
+                );
+              }
+            );}
 
   return (
     <React.Fragment>
+        <div className="container-fluid row mr-autoe" style={{display: 'flex', alignItems:'center', justifyContent:'start'}}>
+        <div className = "col">
         <button
             className="btn-link tmc-dk-blu"
             style={{
@@ -83,6 +93,16 @@ const ChallengeIndex = ({ challenges }) => {
           >
            <h4> {searchCollapse ? "Search " : "Search "} {searchCollapse && <small>&#x25B6;</small>}{!searchCollapse && <small>&#x25bc;</small>}</h4>
           </button>
+          </div>
+          <div className="">
+          <div className=" container" style={{maxHeight: "25px",outlineStyle:'solid',outlineColor: '#2D465A',  padding:'5px',marginLeft:'20px',display:'flex', justifyContent:'start',alignItems:'center'}}>
+          <input type="checkbox"
+           defaultChecked ={filterVideo}
+        onClick={() => setFilterVideo(!filterVideo)}/><small className="tmc-blu" style={{whiteSpace:'pre'}}>{"  "}  Require Video</small>
+            </div>
+            </div>
+            </div>
+
           {!searchCollapse && ( 
       <div className="container-fluid row">
          
