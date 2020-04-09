@@ -1,16 +1,7 @@
 <%= render :partial => 'shared/nav_top' %>
 
   <div class="container-fluid" style="">
-    <div class="row" style="padding: 20px;">
-    <div style="width:100px"></div>
-
-   
-        <div class="card-deck">
-            <% @challenges.each_with_index do |challenge, index| %>
-              <%= react_component("ChallengeIndexCard", { challenge: challenge, index: index,}) %>
-            <% end %>
-        </div>
-    </div>
+              <%= react_component("ChallengeIndex", { challenges: @challenges}) %>    
 </div>
 
  

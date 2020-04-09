@@ -60,7 +60,11 @@ const ChallengeFrame = ({ challenge, index }) => {
         >
           <button
             className="btn-link tmc-dk-blu"
-            style={{ outline: 'none', backgroundColor: 'transparent', border: '0px'}}
+            style={{
+              outline: "none",
+              backgroundColor: "transparent",
+              border: "0px",
+            }}
             onClick={() => setIsExpanded(!isExpanded)}
           >
             {!isExpanded ? " Show Less" : " Show More"}
