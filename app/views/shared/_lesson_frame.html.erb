@@ -25,15 +25,7 @@
 <% lesson.challenges.each_with_index do |challenge,index| %> 
 
   
-    <h3>
-      Activity <%= (index + 1) %>: <%= challenge.activity_title %> 
-    </h3>
-
-    <div class="containter-fluid" style = " background-color: #00A1E0; color:white;">
-      <p style="color:white; padding-left: 10px; display: flex; align-items: center; justify-content: flex-start;">
-        <%= challenge.purpose %>
-      </p>
-    </div>
+  <%= react_component("ChallengeInfo", { challenge: challenge,index: index}) %>
 
     <button class="btn tmc-bg-dk-blu tmc-white  btn-sm" type="button" data-toggle="collapse" data-target="#collapse-activity<%= index %><%= challenge.id %>" aria-expanded="false" aria-controls="collapse-activity<%= index %><%= challenge.id %>">
     <div style="white-space: pre;"><sub><small> &#x25bc;</small></sub>           See Activity            <sub><small>&#x25bc;</small></sub></div>
@@ -41,12 +33,11 @@
     
     <div class="collapse container-fluid" id= "collapse-activity<%= index %><%= challenge.id %>">
       <br>      
-      <%= render :partial => 'shared/challenge_frame', locals: {challenge: challenge, index: index} %>
+      <%= react_component("ChallengeFrame", { challenge: challenge,index: index}) %>
     </div>
 
  
 
   <hr>
- 
 <% end %>
 </div>

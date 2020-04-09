@@ -34,7 +34,7 @@ Sample Course Plan </h2>
 <hr>
 
 <div class="collapse container-fluid" id= "collapse-lesson<%= index %>" data-parent="">
-    <%= render :partial => 'shared/lesson_frame', locals: {lesson: lesson} %>
+<%= react_component("LessonFrame", { lesson: lesson, index: index}) %>
 </div>
 
 <br>

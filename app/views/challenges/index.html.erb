@@ -1,29 +1,7 @@
 <%= render :partial => 'shared/nav_top' %>
 
   <div class="container-fluid" style="">
-    <div class="row" style="padding: 20px;">
-    <div style="width:100px"><%= react_component("HelloWorld", { challenges: @challenges,name: "Zep"}) %></div>
-
-   
-        <div class="card-deck">
-            <% @challenges.each do |challenge| %>
-              <div class="card mb-4" style="min-width: 18rem; max-width: 80%; box-shadow: 10px 10px 5px grey;" >
-                  <img class="card-img-top" src="<%= image_path('MC_Logo.png') %>" alt="Card image cap" >
-                  <div class="card-body">
-                      <h5 class="card-title"><%= challenge.activity_title %></h5>
-                      <p class="card-text"><%= challenge.purpose %></p>
-                      <p><ul class="list-group list-group-flush">
-                        <li class="list-group-item"><small class = "muted text">Space: <%= challenge.space %></small></li>
-                        <li class="list-group-item"><small class = "muted text">Tools: <%= challenge.tools %></small></li>
-                        <li class="list-group-item"><small class = "muted text">Skills: <%= challenge.actions_movements %></small></li>
-                      </ul>
-                      </p>
-                  <div><a href=<%= challenge_path(challenge)%> class="btn btn-primary">View</a></p></div>
-                  </div>
-              </div>
-            <% end %>
-        </div>
-    </div>
+              <%= react_component("ChallengeIndex", { challenges: @challenges}) %>    
 </div>
 
  
