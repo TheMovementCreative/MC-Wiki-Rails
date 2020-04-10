@@ -1,43 +1,5 @@
-<p id="notice"><%= notice %></p>
+<%= render :partial => 'shared/nav_top' %>
 
-<h1>Lessons</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Lesson name</th>
-      <th>Author</th>
-      <th>Purpose</th>
-      <th>Tools</th>
-      <th>Warm up</th>
-      <th>Details</th>
-      <th>Activities</th>
-      <th>Video url</th>
-      <th>Image url</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @lessons.each do |lesson| %>
-      <tr>
-        <td><%= lesson.lesson_name %></td>
-        <td><%= lesson.author %></td>
-        <td><%= lesson.purpose %></td>
-        <td><%= lesson.tools %></td>
-        <td><%= lesson.warm_up %></td>
-        <td><%= lesson.details %></td>
-        <td><%= lesson.activities %></td>
-        <td><%= lesson.video_url %></td>
-        <td><%= lesson.image_url %></td>
-        <td><%= link_to 'Show', lesson %></td>
-        <td><%= link_to 'Edit', edit_lesson_path(lesson) %></td>
-        <td><%= link_to 'Destroy', lesson, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Lesson', new_lesson_path %>
+  <div class="container-fluid" style="">
+              <%= react_component("LessonIndex", { lessons: @lessons}) %>    
+</div>

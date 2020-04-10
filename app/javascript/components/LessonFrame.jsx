@@ -41,7 +41,7 @@ const LessonFrame = ({ lesson, index, lessonChallenges }) => {
       <div className="container-fluid">
         <h3>
           Recomended Warm Up:
-          {lesson.warm_up}
+          {" "+lesson.warm_up}
         </h3>
       </div>
 
@@ -49,8 +49,9 @@ const LessonFrame = ({ lesson, index, lessonChallenges }) => {
 
       <div className="container-fluid">
         {lessonChallenges.map((challenge, index) => (
-          <ListFrameListItem key={challenge.id} challenge={challenge} index={index} />
+          <React.Fragment><ListFrameListItem key={challenge.id} challenge={challenge} index={index} /><hr/></React.Fragment>
         ))}
+        
       </div>
     </React.Fragment>
   );

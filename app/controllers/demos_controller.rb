@@ -3,6 +3,7 @@ class DemosController < ApplicationController
 
 def index
     @lessons = Lesson.find(15,24,23,21)
+    @challenges = Challenge.all
 end
 
 end
