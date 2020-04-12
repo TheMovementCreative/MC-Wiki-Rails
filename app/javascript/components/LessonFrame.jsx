@@ -2,7 +2,9 @@ import React, { useState } from "react";
 import PropTypes, { string } from "prop-types";
 import ListFrameListItem from "./LessonFrameListItem";
 
+
 const LessonFrame = ({ lesson, index, lessonChallenges }) => {
+
   
   return (
     <React.Fragment key={lesson.id + index}>
@@ -30,6 +32,7 @@ const LessonFrame = ({ lesson, index, lessonChallenges }) => {
           }}
         >
           <p>
+            
             <strong> Overview: </strong>
             <br /> {lesson.details}{" "}
           </p>
@@ -41,7 +44,7 @@ const LessonFrame = ({ lesson, index, lessonChallenges }) => {
       <div className="container-fluid">
         <h3>
           Recomended Warm Up:
-          {lesson.warm_up}
+          {" "+lesson.warm_up}
         </h3>
       </div>
 
@@ -49,8 +52,9 @@ const LessonFrame = ({ lesson, index, lessonChallenges }) => {
 
       <div className="container-fluid">
         {lessonChallenges.map((challenge, index) => (
-          <ListFrameListItem key={challenge.id} challenge={challenge} index={index} />
+          <React.Fragment><ListFrameListItem key={challenge.id} challenge={challenge} index={index} /><hr/></React.Fragment>
         ))}
+        
       </div>
     </React.Fragment>
   );

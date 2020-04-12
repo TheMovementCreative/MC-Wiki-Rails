@@ -1,6 +1,12 @@
 <%= render :partial => 'shared/nav_top' %>
 
 
+
+
+<br/>
+<%= react_component("MovementDice", {challenges: @challenges}) %>
+
+<hr/>
 <div class="container-fluid tmc-bg-dk-blu tmc-blu" style="padding: 10px;">
     <span> 
     <h2> 
@@ -27,7 +33,7 @@ Sample Course Plan </h2>
 
     <hr>
 
-    <div class="collapse container-fluid" id= "collapse-lesson<%= index %>" data-parent="">
+    <div class="collapse container-fluid" >
     <%= react_component("LessonFrame", { lesson: lesson, index: index, lessonChallenges: lesson.challenges}) %>
     </div>
 

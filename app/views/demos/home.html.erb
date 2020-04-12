@@ -1,0 +1,4 @@
+<%= render :partial => 'shared/nav_top' %>
+<div class="container-fluid">
+<%= react_component("Home", {challenges: @challenges, lessons:@lessons }) %>
+</div>

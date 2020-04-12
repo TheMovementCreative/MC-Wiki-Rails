@@ -19,6 +19,13 @@ strong {color: $dk-blue; font-family: 'Montserrat', sans-serif;}
 .tmc-blu{color: #00A1E0; font-family: 'Montserrat', sans-serif;}
 .tmc-bg-blu{background-color: #00A1E0;}
 
+.btn-primary{background-color: $blue ; border:0px ;font-family: 'Montserrat', sans-serif;}
+.box-rnd{border-radius: 15px;}
+
+.bg-img-home-ad{background-image: url('../../assets/images/pkPrivate.png'); background-size: cover; background-repeat: no-repeat;}
+.bg-img-home-ad-wt{background-image: url('../../assets/images/woodTrainer.jpg'); background-size: cover; background-repeat: no-repeat;}
+.bg-img-home-ad-mj{background-image: url('../../assets/images/maxJump.jpg'); background-size: cover; background-repeat: no-repeat;}
+
 .nav-button {
     border: 2px solid white;
     background-color: white;
@@ -26,3 +33,4 @@ strong {color: $dk-blue; font-family: 'Montserrat', sans-serif;}
     font-family: 'Montserrat', sans-serif;
 }
 
+.shadow-box{box-shadow: 6px 4px 20px -1px rgba(107,107,107,0.62);}

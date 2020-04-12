@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   get'lessons/index'
   resources :lessons
   
+  get 'home' => 'demos#home'
   get'demos/index'
   resources :demos
   root 'demos#index'

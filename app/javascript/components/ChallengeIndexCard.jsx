@@ -1,15 +1,16 @@
 import React, { useState } from "react";
 import PropTypes, { string } from "prop-types";
 import logo from "../../assets/images/MC_Logo.png";
+import '../stylesheets/application.scss'
 
 
 const ChallengeIndexCard = ({ challenge }) => {
   return (
     <div
-      className="card mb-4 col-sm"
+      className="card mb-4 col-8"
       style={{
-        minWidth: "18rem",
-        maxWidth: "80%",
+        minWidth: "15rem",
+        maxWidth: "360px",
         boxShadow: "10px 10px 5px grey",
       }}
     >
@@ -17,9 +18,10 @@ const ChallengeIndexCard = ({ challenge }) => {
         className="card-img-top"
         src={logo}
         alt="Card image cap"
-        style={{ maxWidth: "200px" }}
+        style={{maxHeight:'100%', maxWidth:'100%'}}
+        
       />
-      <div className="card-body">
+      <div className="card-body" style={{display:'flex', justifyContent:'space-between', flexDirection:'column'}}>
         <h5 className="card-title"> {challenge.activity_title} </h5>
         <p className="card-text"> {challenge.purpose} </p>
         <ul className="list-group list-group-flush">
@@ -37,10 +39,10 @@ const ChallengeIndexCard = ({ challenge }) => {
             </small>
           </li>
         </ul>
-
-        <div>
-          <a href={challenge.id} className="btn btn-primary">
-            View
+        <br/>
+        <div className="container-fluid" style={{display:'flex',justifyContent:'center',alignItems:'flex-end'}}>
+          <a href={challenge.id} className="btn tmc-bg-blu tmc-white btn-sm">
+            View Full Challenge <small>&#x25B6;</small><small>&#x25B6;</small><small>&#x25B6;</small>
           </a>
         </div>
       </div>
