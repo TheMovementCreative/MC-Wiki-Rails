@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import PropTypes, { string } from "prop-types";
 import ChallengeIndexCard from "./ChallengeIndexCard";
+import "../stylesheets/application.scss";
 
 const ChallengeIndex = ({ challenges }) => {
   const [searchCollapse, setSearchCollapse] = useState(true);
@@ -168,9 +169,10 @@ const ChallengeIndex = ({ challenges }) => {
         </div>
       )}
       <hr />
+
+
       <div
         className="card-deck"
-        style={{ overflow: "scroll", maxHeight: "80%" }}
       >
         {filteredChallenges.map((challenge, index) => (
           <ChallengeIndexCard key={index} challenge={challenge} index={index} />

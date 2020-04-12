@@ -6,4 +6,8 @@ def index
     @challenges = Challenge.all
 end
 
+def home
+    @challenges = Challenge.all
+    @lessons = Lesson.all
+end
 end

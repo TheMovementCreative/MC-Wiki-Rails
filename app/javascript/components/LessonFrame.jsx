@@ -2,7 +2,9 @@ import React, { useState } from "react";
 import PropTypes, { string } from "prop-types";
 import ListFrameListItem from "./LessonFrameListItem";
 
+
 const LessonFrame = ({ lesson, index, lessonChallenges }) => {
+
   
   return (
     <React.Fragment key={lesson.id + index}>
@@ -30,6 +32,7 @@ const LessonFrame = ({ lesson, index, lessonChallenges }) => {
           }}
         >
           <p>
+            
             <strong> Overview: </strong>
             <br /> {lesson.details}{" "}
           </p>
