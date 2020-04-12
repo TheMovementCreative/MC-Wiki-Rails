@@ -5,6 +5,12 @@ Rails.application.routes.draw do
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   # For details on the SL available within this file, see https://guides.rubyonrails.org/routing.html
 
+
+  namespace :api, defaults: { format: 'json' } do
+    resources :challenges, only: [:index, :show]
+    resources :lessons, only: [:index, :show]
+  end
+
   get 'challenges/index'
   resources :challenges
  
