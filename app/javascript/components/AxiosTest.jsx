@@ -7,7 +7,7 @@ import axios from 'axios';
 const AxiosTest = () => {
 
     const getChallenges = () => {
-        axios.get('/challenges/index').then(res => console.log(res))
+        axios.get('api/challenges').then(res => console.log(res)).catch(err => console.log(err)).finally(finale => console.log(finale))
     }
 
     return (
