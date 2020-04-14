@@ -13,8 +13,8 @@ const MovementDice = ({ challenges }) => {
   let challenge = filteredChallenges[randomChallenge];
 
   return (
-    <div className="container-fluid row"style={{}}>
-      <div className="col-2" style={{display: 'flex', justifyContent:'center',alignItems:'center'}}>
+    <div className="nested-row row  container-fluid">
+      <div className="col-12 col-md-12" style={{display: 'flex', justifyContent:'center',alignItems:'center'}}>
         
         
         <div className="text-center">

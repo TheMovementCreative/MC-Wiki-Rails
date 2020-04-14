@@ -12,24 +12,25 @@ const HomeFeatureCard = ({ type, featuredItem }) => {
   } else {
     return (
       <div
-        className="container-fluid row"
+        className="container-fluid row nested-row"
         style={{
-          height: "90%",
-          display: "flex",
-          justifyContent: "space-between",
-          alignItems: "center",
-          flexDirection: "column",
-          flexWrap: "nowrap",
+          
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "center",
+            
+            
         }}
       >
-        <div className="container-fluid col" style={{}}>
+        <div className="col-12">
           <div>
             <h3>{featuredItem.activity_title || featuredItem.lesson_name}</h3>
           </div>
           <hr />
           <p>{featuredItem.purpose}</p>
         </div>
-        <div className="embed-responsive embed-responsive-16by9 container-fluid col-md-auto">
+        <div className="col-12">
+        <div className="embed-responsive embed-responsive-16by9 ">
           <iframe
             className="embed-responsive-item"
             src={
@@ -39,8 +40,9 @@ const HomeFeatureCard = ({ type, featuredItem }) => {
             }
           ></iframe>
         </div>
-        <div
-          className="container-fluid py-1 col"
+        </div>
+        <footer
+          className="py-2 col-12"
           style={{
             display: "flex",
             justifyContent: "center",
@@ -66,7 +68,7 @@ const HomeFeatureCard = ({ type, featuredItem }) => {
               <small>&#x25B6;</small>
             </a>
           )}
-        </div>
+        </footer>
       </div>
     );
   }
