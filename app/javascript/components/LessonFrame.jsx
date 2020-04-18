@@ -52,7 +52,7 @@ const LessonFrame = ({ lesson, index, lessonChallenges }) => {
 
       <div className="container-fluid">
         {lessonChallenges.map((challenge, index) => (
-          <React.Fragment><ListFrameListItem key={challenge.id} challenge={challenge} index={index} /><hr/></React.Fragment>
+          <React.Fragment><ListFrameListItem key={index} challengeID={challenge.id} index={index} /><hr/></React.Fragment>
         ))}
         
       </div>

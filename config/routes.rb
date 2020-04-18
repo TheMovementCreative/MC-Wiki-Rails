@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   namespace :api, defaults: { format: 'json' } do
     resources :challenges, only: [:index, :show]
     resources :lessons, only: [:index, :show]
+    resources :lesson_plans, only: [:index]
   end
 
   get 'challenges/index'
@@ -17,6 +18,8 @@ Rails.application.routes.draw do
 
   get'lessons/index'
   resources :lessons
+
+
   
   get 'home' => 'demos#home'
   get'demos/index'
