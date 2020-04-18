@@ -2,14 +2,14 @@ import React, { useState } from "react";
 import PropTypes, { string } from "prop-types";
 import ChallengeInfo from "./ChallengeInfo";
 import ChallengeFrame from "./ChallengeFrame";
-import LessonFrame from "./LessonFrame";
 
-const LessonFrameListItem = ({ challenge, index }) => {
+
+const LessonFrameListItem = ({ challengeID, index }) => {
   const [isExpanded, setIsExpanded] = useState(false);
 
   return (
     <React.Fragment>
-      <ChallengeInfo challenge={challenge} index={index} listed={true} />
+      <ChallengeInfo key={'info'+index} challengeID={challengeID} index={index} listed={true} />
 
       <button
         className="btn tmc-bg-dk-blu tmc-white  btn-sm"
@@ -30,7 +30,7 @@ const LessonFrameListItem = ({ challenge, index }) => {
       {isExpanded && (
         <div className="container-fluid">
           <br />
-          <ChallengeFrame challenge={challenge} index={index} />
+          <ChallengeFrame key={'frame' + index} challengeID={challengeID} index={index} />
         </div>
       )}
     </React.Fragment>

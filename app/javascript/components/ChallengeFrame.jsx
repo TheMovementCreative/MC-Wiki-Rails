@@ -1,9 +1,24 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import PropTypes, { string } from "prop-types";
+import axios from 'axios'
 
-const ChallengeFrame = ({ challenge, index }) => {
+const ChallengeFrame = ({ challengeID, index }) => {
+
+  const [challenge, setChallenge] = useState();
+
+  useEffect(() => {
+    const fetchChallenge = async () => {
+      const resultChallenge = await axios("/api/challenges/"+challengeID);
+      setChallenge(resultChallenge.data);
+    };
+    fetchChallenge();
+  
+  }, []);
+
+
+
   const [isExpanded, setIsExpanded] = useState("false");
-
+  if(challenge){
   return (
     <React.Fragment>
       <div
@@ -72,7 +87,8 @@ const ChallengeFrame = ({ challenge, index }) => {
         </div>
       </div>
     </React.Fragment>
-  );
+  );}
+  else{return null;}
 };
 
 export default ChallengeFrame;

@@ -1,9 +1,23 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import PropTypes, { string } from "prop-types";
 import ChallengeIndexCard from "./ChallengeIndexCard";
 import "../stylesheets/application.scss";
+import axios from 'axios';
 
-const ChallengeIndex = ({ challenges }) => {
+const ChallengeIndex = ({ }) => {
+const [challenges, setChallenges] = useState([]);
+
+useEffect(() => {
+  const fetchChallenges = async () => {
+    const resultChallenges = await axios("/api/challenges/");
+    setChallenges(resultChallenges.data);
+  };
+  fetchChallenges();
+
+}, []);
+
+
+
   const [searchCollapse, setSearchCollapse] = useState(true);
   const [searchQueryTitle, setSearchQueryTitle] = useState("");
   const [searchQuerySkill, setSearchQuerySkill] = useState("");
