@@ -1,11 +1,26 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import PropTypes, { string } from "prop-types";
 import ListFrameListItem from "./LessonFrameListItem";
+import axios from 'axios';
 
 
-const LessonFrame = ({ lesson, index, lessonChallenges }) => {
+const LessonFrame = ({ lessonID, index }) => {
 
+  const [lesson, setLesson] = useState();
+  const [lessonPlans, setLessonPlans] = useState([]);
+
+  useEffect(() => {
+    const fetchLesson = async () => {
+      const resultLesson = await axios("/api/lessons/"+lessonID);
+      const resultLessonPlan = await axios("/api/lesson_plans/?lesson_id="+lessonID);
+      setLesson(resultLesson.data);
+      setLessonPlans(resultLessonPlan.data);
+    };
+    fetchLesson();
   
+  }, []);
+  
+  if(lesson){
   return (
     <React.Fragment key={lesson.id + index}>
       <div
@@ -51,13 +66,14 @@ const LessonFrame = ({ lesson, index, lessonChallenges }) => {
       <hr />
 
       <div className="container-fluid">
-        {lessonChallenges.map((challenge, index) => (
-          <React.Fragment><ListFrameListItem key={index} challengeID={challenge.id} index={index} /><hr/></React.Fragment>
+        {lessonPlans.map((lessonPlan, challengeIndex) => (
+          <div key={lessonPlan.challengeID} ><ListFrameListItem  challengeID={lessonPlan.challenge_id} index={challengeIndex} /><hr/></div>
         ))}
         
       </div>
     </React.Fragment>
-  );
+  );}
+  else{return null;}
 };
 
 export default LessonFrame;

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import PropTypes, { string } from "prop-types";
 import ChallengeInfo from "./ChallengeInfo";
 import ChallengeFrame from "./ChallengeFrame";
-import LessonFrame from "./LessonFrame";
+
 
 const LessonFrameListItem = ({ challengeID, index }) => {
   const [isExpanded, setIsExpanded] = useState(false);
