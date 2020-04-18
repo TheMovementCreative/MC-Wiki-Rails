@@ -9,13 +9,15 @@ const LessonFrame = ({ lessonID, index }) => {
   const [lesson, setLesson] = useState();
   const [lessonPlans, setLessonPlans] = useState([]);
 
+  const fetchLesson = async () => {
+    const resultLesson = await axios("/api/lessons/"+lessonID);
+    const resultLessonPlan = await axios("/api/lesson_plans/?lesson_id="+lessonID);
+    setLesson(resultLesson.data);
+    setLessonPlans(resultLessonPlan.data);
+  };
+
   useEffect(() => {
-    const fetchLesson = async () => {
-      const resultLesson = await axios("/api/lessons/"+lessonID);
-      const resultLessonPlan = await axios("/api/lesson_plans/?lesson_id="+lessonID);
-      setLesson(resultLesson.data);
-      setLessonPlans(resultLessonPlan.data);
-    };
+
     fetchLesson();
   
   }, []);

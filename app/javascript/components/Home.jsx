@@ -9,15 +9,15 @@ const Home = ({ challenges, lessons }) => {
   const [featuredChallenge, setFeaturedChallenge] = useState();
   const [featuredLesson, setFeaturedLesson] = useState();
 
-
+  const fetchFeatures = async () => {
+    const resultChallenge = await axios("/api/challenges/"+ 1);
+    const resultLesson = await axios("/api/lessons/"+ 15);
+    setFeaturedChallenge(resultChallenge.data);
+    setFeaturedLesson(resultLesson.data);
+  };
 
   useEffect(() => {
-    const fetchFeatures = async () => {
-      const resultChallenge = await axios("/api/challenges/"+ 1);
-      const resultLesson = await axios("/api/lessons/"+ 15);
-      setFeaturedChallenge(resultChallenge.data);
-      setFeaturedLesson(resultLesson.data);
-    };
+
     fetchFeatures();
   }, []);
 
