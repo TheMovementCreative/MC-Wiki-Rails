@@ -22,6 +22,14 @@ strong {color: $dk-blue; font-family: 'Montserrat', sans-serif;}
 .btn-primary{background-color: $blue ; border:0px ;font-family: 'Montserrat', sans-serif;}
 .box-rnd{border-radius: 15px;}
 
+.nest-col{display: "flex"; justify-content: "center"; flex-direction:"column"; align-items:'center'; padding:0;margin:5px;}
+.nested-row{padding:0;margin: 0;}
+.nested-row-empty{padding:0;margin: 0; height: 100%;}
+
+.just-c-between{display: flex; justify-content:space-between;}
+.center-flex{display: flex; justify-content:center;align-items:center; ;}
+.center-spread{display: flex; justify-content:space-between; align-items:center;}
+
 .bg-img-home-ad{background-image: url('../../assets/images/pkPrivate.png'); background-size: cover; background-repeat: no-repeat;}
 .bg-img-home-ad-wt{background-image: url('../../assets/images/woodTrainer.jpg'); background-size: cover; background-repeat: no-repeat;}
 .bg-img-home-ad-mj{background-image: url('../../assets/images/maxJump.jpg'); background-size: cover; background-repeat: no-repeat;}
