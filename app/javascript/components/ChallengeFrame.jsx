@@ -6,11 +6,13 @@ const ChallengeFrame = ({ challengeID, index }) => {
 
   const [challenge, setChallenge] = useState();
 
+  const fetchChallenge = async () => {
+    const resultChallenge = await axios("/api/challenges/"+challengeID);
+    setChallenge(resultChallenge.data);
+  };
+
   useEffect(() => {
-    const fetchChallenge = async () => {
-      const resultChallenge = await axios("/api/challenges/"+challengeID);
-      setChallenge(resultChallenge.data);
-    };
+
     fetchChallenge();
   
   }, []);
