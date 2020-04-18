@@ -1,10 +1,27 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import PropTypes, { string } from "prop-types";
+import axios from 'axios';
 
-const ChallengeInfo = ({ challenge, index, listed }) => {
+const ChallengeInfo = ({ challengeID, index, listed }) => {
+
+  const [challenge, setChallenge] = useState();
+
+  useEffect(() => {
+    const fetchChallenge = async () => {
+      const resultChallenge = await axios("/api/challenges/"+ challengeID);
+      setChallenge(resultChallenge.data);
+    };
+    fetchChallenge();
+  
+  }, []);
+
+
+
+
+  if(challenge){
   return(
     <React.Fragment>
-      <h3>
+       <h3>
   {listed && <React.Fragment>Activity {index + 1} : </React.Fragment>}{challenge.activity_title}
       </h3>
 
@@ -22,7 +39,8 @@ const ChallengeInfo = ({ challenge, index, listed }) => {
         </p>
       </div>
     </React.Fragment>
-  );
+  );}
+  else{return null}
 };
 
 export default ChallengeInfo;
