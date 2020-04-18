@@ -1,0 +1,13 @@
+{
+    "sqltools.connections": [
+        {
+            "database": "mc_wiki_development",
+            "dialect": "PostgreSQL",
+            "name": "MC_WIKI",
+            "password": "linux",
+            "port": 5432,
+            "server": "localhost",
+            "username": "postgres"
+        }
+    ]
+}

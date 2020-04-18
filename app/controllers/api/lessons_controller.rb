@@ -12,6 +12,7 @@ module API
     # GET /lessons/1.json
     def show
       @lesson = Lesson.find(params[:id])
+      
       render json: @lesson
     end
 
