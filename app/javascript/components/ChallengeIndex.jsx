@@ -7,6 +7,7 @@ import axios from 'axios';
 const ChallengeIndex = ({ }) => {
 const [challenges, setChallenges] = useState([]);
 
+
 baseUrl = process.env.baseURL || "http://localhost:3000"
 
 useEffect(() => {
@@ -14,6 +15,7 @@ useEffect(() => {
     const resultChallenges = await axios(`${baseUrl}/api/challenges/`);
     setChallenges(resultChallenges.data);
   };
+
   fetchChallenges();
 
 }, []);
