@@ -7,11 +7,13 @@ import axios from 'axios';
 const ChallengeIndex = ({ }) => {
 const [challenges, setChallenges] = useState([]);
 
+const fetchChallenges = async () => {
+  const resultChallenges = await axios("/api/challenges/");
+  setChallenges(resultChallenges.data);
+};
+
 useEffect(() => {
-  const fetchChallenges = async () => {
-    const resultChallenges = await axios("/api/challenges/");
-    setChallenges(resultChallenges.data);
-  };
+
   fetchChallenges();
 
 }, []);

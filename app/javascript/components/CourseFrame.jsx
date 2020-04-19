@@ -1,12 +1,15 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import PropTypes, { string } from "prop-types";
 
-/* TODO I need access to Lessons.Challenges in order to pass it on to the next frame
 
 
 CourseFrame = (lessons) => {
+
+
+
+
 return(
-<% @lessons.each_with_index do |lesson, index| %>
+{
 <div class= "container-fluid">
     
 
@@ -31,9 +34,8 @@ return(
 
 
 </div>
-<% end %>
+<% end %>}
 
 
 );}
 
-*/
