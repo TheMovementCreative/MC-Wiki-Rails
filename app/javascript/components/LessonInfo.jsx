@@ -1,8 +1,27 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import PropTypes, { string } from "prop-types";
 import { render } from "react-dom";
+import * as Constants from '../constants'
+import axios from 'axios'
 
-const LessonInfo = ({ lesson, index, listed}) => {
+const LessonInfo = ({ lessonID, index, listed}) => {
+
+  const [lesson, setLesson] = useState();
+
+  const fetchLesson = async () => {
+    const resultLesson = await axios(Constants.BASEURL+"/api/lessons/"+lessonID);
+    setLesson(resultLesson.data);
+    
+  };
+
+  useEffect(() => {
+
+    fetchLesson();
+  
+  }, []);
+
+
+    if(lesson){
     return(
         <React.Fragment>
         <div className="container-fluid tmc-bg-blu tmc-white" style = {{display: 'flex', alignItems: 'center'}}>
@@ -21,7 +40,8 @@ const LessonInfo = ({ lesson, index, listed}) => {
   <p><strong>Tools Required:</strong><br/>  {lesson.tools}  </p> 
 </div>
 </React.Fragment>
-);
+);}
+else{return null;} 
 }
 
 export default LessonInfo;

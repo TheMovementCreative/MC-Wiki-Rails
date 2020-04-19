@@ -4,6 +4,7 @@ import logo from "../../assets/images/MC_Logo.png";
 import '../stylesheets/application.scss'
 
 
+
 const ChallengeIndexCard = ({ challenge }) => {
   return (
     <div

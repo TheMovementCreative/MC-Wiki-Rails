@@ -2,19 +2,18 @@ import React, { useState, useEffect } from "react";
 import PropTypes, { string } from "prop-types";
 import ChallengeIndexCard from "./ChallengeIndexCard";
 import "../stylesheets/application.scss";
+import * as Constants from '../constants';
 import axios from 'axios';
 
 const ChallengeIndex = ({ }) => {
 const [challenges, setChallenges] = useState([]);
 
-
-baseUrl = process.env.baseURL || "http://localhost:3000"
+const fetchChallenges = async () => {
+  const resultChallenges = await axios( Constants.BASEURL+"/api/challenges/");
+  setChallenges(resultChallenges.data);
+};
 
 useEffect(() => {
-  const fetchChallenges = async () => {
-    const resultChallenges = await axios(`${baseUrl}/api/challenges/`);
-    setChallenges(resultChallenges.data);
-  };
 
   fetchChallenges();
 

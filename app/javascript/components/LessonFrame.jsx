@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import PropTypes, { string } from "prop-types";
 import ListFrameListItem from "./LessonFrameListItem";
+import * as Constants from '../constants';
 import axios from 'axios';
 
 
@@ -10,8 +11,8 @@ const LessonFrame = ({ lessonID, index }) => {
   const [lessonPlans, setLessonPlans] = useState([]);
 
   const fetchLesson = async () => {
-    const resultLesson = await axios("/api/lessons/"+lessonID);
-    const resultLessonPlan = await axios("/api/lesson_plans/?lesson_id="+lessonID);
+    const resultLesson = await axios(Constants.BASEURL+"/api/lessons/"+lessonID);
+    const resultLessonPlan = await axios(Constants.BASEURL+"/api/lesson_plans/?lesson_id="+lessonID);
     setLesson(resultLesson.data);
     setLessonPlans(resultLessonPlan.data);
   };

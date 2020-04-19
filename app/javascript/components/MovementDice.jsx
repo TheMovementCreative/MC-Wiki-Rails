@@ -5,12 +5,24 @@ import MovementDiceCard from "./MovementDiceCard";
 
 const MovementDice = ({ challenges }) => {
   const [randomChallenge, setRandomChallenge] = useState(0);
+  const[isCollapsed, setIsCollpased] = useState(true);
 
   let filteredChallenges = challenges.filter((challenge) => {
     return challenge.video_url;
   });
 
   let challenge = filteredChallenges[randomChallenge];
+
+  const diceRoll = () => {
+
+    if(isCollapsed){setIsCollpased(false)}
+
+    setRandomChallenge(
+      Math.floor(Math.random() * filteredChallenges.length)
+    )
+
+  }
+
 
   return (
     <div className="nested-row row  container-fluid">
@@ -22,17 +34,15 @@ const MovementDice = ({ challenges }) => {
             <img
               src={dice}
               style={{ width: "50px", height: "50px" }}
-              onClick={() =>
-                setRandomChallenge(
-                  Math.floor(Math.random() * filteredChallenges.length)
-                )
+              onClick={() => diceRoll()
+                
               }
             />
           </button>
         </div>
       </div>
 
-      <MovementDiceCard challenge={challenge} />
+      {!isCollapsed&&<MovementDiceCard challenge={challenge} />}
     </div>
   );
 };

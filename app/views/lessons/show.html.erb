@@ -2,7 +2,7 @@
 <%= render :partial => 'shared/nav_top' %>
 
 
-<%= react_component("LessonInfo", { lesson: @lesson,index: 0, listed: false}) %>
+<%= react_component("LessonInfo", { lessonID: @lesson.id,index: 0, listed: false}) %>
 
 <hr>
 
