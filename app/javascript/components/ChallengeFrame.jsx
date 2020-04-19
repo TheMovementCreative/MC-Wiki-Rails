@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import PropTypes, { string } from "prop-types";
+import * as Constants from '../constants';
 import axios from 'axios'
 
 const ChallengeFrame = ({ challengeID, index }) => {
@@ -7,7 +8,7 @@ const ChallengeFrame = ({ challengeID, index }) => {
   const [challenge, setChallenge] = useState();
 
   const fetchChallenge = async () => {
-    const resultChallenge = await axios("/api/challenges/"+challengeID);
+    const resultChallenge = await axios(Constants.BASEURL+"/api/challenges/"+challengeID);
     setChallenge(resultChallenge.data);
   };
 

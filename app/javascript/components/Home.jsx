@@ -3,6 +3,7 @@ import PropTypes, { string } from "prop-types";
 import MovementDice from "./MovementDice";
 import HomeFeatueCard from "./HomeFeatureCard";
 import mikePic from "../../assets/images/mike_profile_pic";
+import * as Constants from '../constants';
 import axios from "axios";
 
 const Home = ({ challenges, lessons }) => {
@@ -10,8 +11,8 @@ const Home = ({ challenges, lessons }) => {
   const [featuredLesson, setFeaturedLesson] = useState();
 
   const fetchFeatures = async () => {
-    const resultChallenge = await axios("/api/challenges/"+ 1);
-    const resultLesson = await axios("/api/lessons/"+ 15);
+    const resultChallenge = await axios(Constants.BASEURL+"/api/challenges/"+ 1);
+    const resultLesson = await axios(Constants.BASEURL+"/api/lessons/"+ 15);
     setFeaturedChallenge(resultChallenge.data);
     setFeaturedLesson(resultLesson.data);
   };
