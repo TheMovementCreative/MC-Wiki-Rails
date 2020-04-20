@@ -1,40 +1,40 @@
 {
-  "application.js": "/packs/js/application-0a62775d01c781975a4f.js",
-  "application.js.map": "/packs/js/application-0a62775d01c781975a4f.js.map",
+  "application.js": "/packs/js/application-34a1b8ceca708c300ad2.js",
+  "application.js.map": "/packs/js/application-34a1b8ceca708c300ad2.js.map",
   "entrypoints": {
     "application": {
       "js": [
-        "/packs/js/application-0a62775d01c781975a4f.js"
+        "/packs/js/application-34a1b8ceca708c300ad2.js"
       ],
       "js.map": [
-        "/packs/js/application-0a62775d01c781975a4f.js.map"
+        "/packs/js/application-34a1b8ceca708c300ad2.js.map"
       ]
     },
     "hello_react": {
       "js": [
-        "/packs/js/hello_react-0758dc0401e452213051.js"
+        "/packs/js/hello_react-e35c818c3b932a6169e9.js"
       ],
       "js.map": [
-        "/packs/js/hello_react-0758dc0401e452213051.js.map"
+        "/packs/js/hello_react-e35c818c3b932a6169e9.js.map"
       ]
     },
     "server_rendering": {
       "js": [
-        "/packs/js/server_rendering-e6b5971a129299ae1a6a.js"
+        "/packs/js/server_rendering-857d61031f978189a0b2.js"
       ],
       "js.map": [
-        "/packs/js/server_rendering-e6b5971a129299ae1a6a.js.map"
+        "/packs/js/server_rendering-857d61031f978189a0b2.js.map"
       ]
     }
   },
-  "hello_react.js": "/packs/js/hello_react-0758dc0401e452213051.js",
-  "hello_react.js.map": "/packs/js/hello_react-0758dc0401e452213051.js.map",
+  "hello_react.js": "/packs/js/hello_react-e35c818c3b932a6169e9.js",
+  "hello_react.js.map": "/packs/js/hello_react-e35c818c3b932a6169e9.js.map",
   "media/images/MC_Logo.png": "/packs/media/images/MC_Logo-193195b5.png",
   "media/images/dice.png": "/packs/media/images/dice-dc281acb.png",
   "media/images/maxJump.jpg": "/packs/media/images/maxJump-6811d536.jpg",
   "media/images/mike_profile_pic.jpg": "/packs/media/images/mike_profile_pic-6ca3549b.jpg",
   "media/images/pkPrivate.png": "/packs/media/images/pkPrivate-62e42e15.png",
   "media/images/woodTrainer.jpg": "/packs/media/images/woodTrainer-aba75db0.jpg",
-  "server_rendering.js": "/packs/js/server_rendering-e6b5971a129299ae1a6a.js",
-  "server_rendering.js.map": "/packs/js/server_rendering-e6b5971a129299ae1a6a.js.map"
+  "server_rendering.js": "/packs/js/server_rendering-857d61031f978189a0b2.js",
+  "server_rendering.js.map": "/packs/js/server_rendering-857d61031f978189a0b2.js.map"
 }

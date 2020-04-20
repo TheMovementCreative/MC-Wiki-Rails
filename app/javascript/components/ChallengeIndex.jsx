@@ -5,6 +5,8 @@ import "../stylesheets/application.scss";
 import * as Constants from '../constants';
 import axios from 'axios';
 
+console.log("baseURL",Constants.BASEURL)
+
 const ChallengeIndex = ({ }) => {
 const [challenges, setChallenges] = useState([]);
 
