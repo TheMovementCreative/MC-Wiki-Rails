@@ -26,7 +26,7 @@ const LessonInfo = ({ lessonID, index, listed}) => {
         <React.Fragment>
         <div className="container-fluid tmc-bg-blu tmc-white" style = {{display: 'flex', alignItems: 'center'}}>
         <span>
-            <h3 style= {{color: 'white'}}> {listed && <React.Fragment>Day {index +1} : </React.Fragment>} {lesson.lesson_name}</h3>
+            <h3 style= {{color: 'white'}}> {listed && <React.Fragment>Day {index +1} : </React.Fragment>} {lesson.name}</h3>
             <sup><em> By:  {lesson.author}  </em></sup>
         </span>
     </div>

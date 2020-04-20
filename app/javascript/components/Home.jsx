@@ -40,9 +40,7 @@ const Home = ({ challenges, lessons }) => {
 
         <div className=" row nested-row ">
           <div className="col-12 col-md nest-col shadow-box">
-            <header>
-              <strong>Featured Daily Challenge</strong>
-            </header>
+
             {featuredChallenge && (
               <HomeFeatueCard
                 type={"Challenge"}
@@ -56,44 +54,52 @@ const Home = ({ challenges, lessons }) => {
               display: "flex",
               justifyContent: "space-around",
               alignItems: "center",
-              flexDirection: "column",
+              
             }}
           >
             <div className="row nested-row-empty">
+              
+              
               <div
-                className="col-6 tmc-bg-dk-blu shadow-box "
+                className="col-12 tmc-bg-dk-blu shadow-box pad-5"
                 style={{ border: "0px solid #000000", borderRadius: "15px" }}
               >
+                <h3 className="tmc-white">Thanks for using Move More Alpha!</h3> <br/>
                 <small>
                   <p className="tmc-white">
                     <em>
-                      "The soul is the peak of the mountain that is your spirt"
-                      <br /> - Jesse Danger
+                      Please be aware that since this is a work in progress, expect bugs, buttons not to work
+                      and things to change or move places.
+                      <br/><br/>
+                      Please send any feedback to info@themovementcreative.com
+                      <br/><br/>
+                      Have fun, and embrace challenge!
+                      <br /><br/> - Jesse Danger
                     </em>
                   </p>
                 </small>
               </div>
               <div
-                className="col-6 shadow-box "
+                className="col-12 shadow-box mt-2"
                 style={{
                   display: "flex",
                   justifyContent: "space-around",
                   alignItems: "center",
                   flexDirection: "column",
-                  borderRadius: "15px",
+                  
                 }}
               >
                 <strong>
                   Select from {challenges.length} unique activities!
                 </strong>
-                <button
-                  className="btn-lg tmc-bg-blu tmc-white my-2"
-                  href="/challenges"
+                <a
+                  className="btn-lg btn-primary my-2"
+                  href={"/challenges"}
                 >
                   Browse <small>&#x25B6;</small>
                   <small>&#x25B6;</small>
                   <small>&#x25B6;</small>
-                </button>
+                </a>
               </div>
               <div
                 className="col-12 nest-col my-2 py-2 shadow-box bg-img-home-ad"
@@ -103,14 +109,15 @@ const Home = ({ challenges, lessons }) => {
                   alignItems: "baseline",
                   flexDirection: "column",
                   borderRadius: "20px",
+                  marginLeft:'0px'
                 }}
               >
-                <h3 className="tmc-white">
+                <h3 className="tmc-white mx-2">
                   Don't
                   <br /> train alone!
                 </h3>
 
-                <button className="btn-sm btn-primary">
+                <button className="btn-sm btn-primary mx-2">
                   {" "}
                   <a
                     className="tmc-white"
@@ -136,7 +143,7 @@ const Home = ({ challenges, lessons }) => {
 
         <div className="nested-row-empty row mb-3">
           <div className="col-12 col-md-8 nest-col shadow-box">
-            <strong>Featured Weeekly Lesson</strong>
+            
             <div className="row nested-row">
               {featuredLesson && <React.Fragment><div className="col-12 col-md-8 nest-col center-spread">
                 <HomeFeatueCard type={"lesson"} featuredItem={featuredLesson} />
@@ -165,30 +172,32 @@ const Home = ({ challenges, lessons }) => {
           </div>
 
           <div className="col-12 col-md nest-col">
-            <div className="row nested-row-empty container-fluid center-spread">
+            <div className="row nested-row-empty container-fluid">
               <div
-                className="col-12 shadow-box"
+                className="col-6 col-md-12 shadow-box"
                 style={{
                   display: "flex",
                   justifyContent: "space-around",
                   alignItems: "center",
                   flexDirection: "column",
-                  borderRadius: "15px",
+                  
+                  maxHeight: '110px'
                 }}
               >
                 <strong>Select from {lessons.length} unique Lessons!</strong>
-                <button
-                  className="btn-lg tmc-bg-blu tmc-white my-2"
+                <a
+                  className="btn-lg btn-primary my-2"
                   href="/lessons"
+                 
                 >
                   Browse <small>&#x25B6;</small>
                   <small>&#x25B6;</small>
                   <small>&#x25B6;</small>
-                </button>
+                </a>
               </div>
 
               <div
-                className="col-12 shadow-box bg-img-home-ad-mj my-2"
+                className="col-6 col-md-12 shadow-box bg-img-home-ad-mj my-2"
                 style={{
                   minHeight: "100px",
                   borderRadius: "15px",
@@ -196,19 +205,19 @@ const Home = ({ challenges, lessons }) => {
                   alignItems: "flex-end",
                 }}
               >
-                <button className="btn-sm btn-primary mb-2">
+                <a href={'http://www.themovementcreative.com/online-schedule'} className="btn-sm btn-primary mb-2">
                   {" "}
                   Online Classses <small>&#x25B6;</small>
-                </button>
+                </a>
               </div>
 
               <div
-                className="col-12 shadow-box bg-img-home-ad-wt mb-2"
+                className="col-12 shadow-box bg-img-home-ad-wt mb-2 pad-5"
                 style={{ minHeight: "100px", borderRadius: "15px" }}
               >
-                <button className="btn-sm btn-primary mt-2">
+                <a href={'http://www.themovementcreative.com/store-all'} className="btn-sm btn-primary mt-2">
                   Visit Our Store <small>&#x25B6;</small>
-                </button>
+                </a>
               </div>
             </div>
           </div>

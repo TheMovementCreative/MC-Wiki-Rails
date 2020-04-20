@@ -10,13 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_19_222106) do
+ActiveRecord::Schema.define(version: 2020_04_20_212141) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "challenges", force: :cascade do |t|
-    t.string "activity_title"
+    t.string "name"
     t.string "purpose"
     t.string "space"
     t.string "goal"
@@ -30,6 +30,32 @@ ActiveRecord::Schema.define(version: 2020_04_19_222106) do
     t.datetime "updated_at", precision: 6, null: false
     t.boolean "apartment_friendly"
     t.boolean "beginner_friendly"
+    t.boolean "publish"
+  end
+
+  create_table "course_plans", force: :cascade do |t|
+    t.bigint "course_id"
+    t.bigint "lesson_id"
+    t.string "lesson_category"
+    t.text "details_override"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "courses", force: :cascade do |t|
+    t.string "name"
+    t.string "purpose"
+    t.string "author"
+    t.string "tools"
+    t.string "space"
+    t.string "skills"
+    t.text "details"
+    t.boolean "publish"
+    t.string "video_url"
+    t.string "image_url"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["name"], name: "index_courses_on_name", unique: true
   end
 
   create_table "lesson_plans", force: :cascade do |t|
@@ -44,7 +70,7 @@ ActiveRecord::Schema.define(version: 2020_04_19_222106) do
   end
 
   create_table "lessons", force: :cascade do |t|
-    t.string "lesson_name"
+    t.string "name"
     t.string "author"
     t.string "purpose"
     t.string "tools"
@@ -55,6 +81,7 @@ ActiveRecord::Schema.define(version: 2020_04_19_222106) do
     t.string "image_url"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.boolean "publish"
   end
 
   create_table "users", force: :cascade do |t|

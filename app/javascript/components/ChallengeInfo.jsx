@@ -27,7 +27,7 @@ const ChallengeInfo = ({ challengeID, index, listed }) => {
   return(
     <React.Fragment>
        <h3>
-  {listed && <React.Fragment>Activity {index + 1} : </React.Fragment>}{challenge.activity_title}
+  {listed && <React.Fragment>Activity {index + 1} : </React.Fragment>}{challenge.name}
       </h3>
 
       <div className="containter-fluid tmc-bg-blu tmc-white">

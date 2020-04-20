@@ -10,7 +10,9 @@ const HomeFeatureCard = ({ type, featuredItem }) => {
   } else if (type === "course") {
     return <h1> {type}s coming soon! </h1>;
   } else {
-    return (
+    return (<React.Fragment>
+
+    
       <div
         className="container-fluid row nested-row"
         style={{
@@ -18,13 +20,18 @@ const HomeFeatureCard = ({ type, featuredItem }) => {
             display: "flex",
             justifyContent: "space-between",
             alignItems: "center",
+            height: '100%'
+            
             
             
         }}
       >
         <div className="col-12">
+          <header><strong>Featured Daily {type.toUpperCase() === 'CHALLENGE' && 'Challenge' || type.toUpperCase() === 'LESSON' && 'Lesson'}</strong></header>
+        </div>
+        <div className="col-12">
           <div>
-            <h3>{featuredItem.activity_title || featuredItem.lesson_name}</h3>
+            <h3>{featuredItem.name}</h3>
           </div>
           <hr />
           <p>{featuredItem.purpose}</p>
@@ -41,6 +48,7 @@ const HomeFeatureCard = ({ type, featuredItem }) => {
           ></iframe>
         </div>
         </div>
+        
         <footer
           className="py-2 col-12"
           style={{
@@ -70,6 +78,8 @@ const HomeFeatureCard = ({ type, featuredItem }) => {
           )}
         </footer>
       </div>
+
+      </React.Fragment>
     );
   }
 };

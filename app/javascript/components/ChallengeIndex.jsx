@@ -27,13 +27,13 @@ useEffect(() => {
   const [searchQuerySpace, setSearchQuerySpace] = useState("");
   const [searchQueryTools, setSearchQueryTools] = useState("");
   const [filterVideo, setFilterVideo] = useState(true);
-
+if(challenges){
   let filteredChallenges = challenges.filter((challenge) => {
     if (!searchQueryTitle) {
       return challenge;
     } else {
       return (
-        challenge.activity_title
+        challenge.name
           .toUpperCase()
           .indexOf(searchQueryTitle.toUpperCase()) !== -1
       );
@@ -189,14 +189,15 @@ useEffect(() => {
 
 
       <div
-        className="card-deck"
+        className="card-deck row nested-row"
       >
         {filteredChallenges.map((challenge, index) => (
           <ChallengeIndexCard key={index} challenge={challenge} index={index} />
         ))}
       </div>
     </React.Fragment>
-  );
+  );}
+  else{return null;}
 };
 
 export default ChallengeIndex;

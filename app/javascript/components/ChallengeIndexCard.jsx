@@ -8,7 +8,7 @@ import '../stylesheets/application.scss'
 const ChallengeIndexCard = ({ challenge }) => {
   return (
     <div
-      className="card mb-4 col-8"
+      className="card mb-4 col-3 no-pad"
       style={{
         minWidth: "15rem",
         maxWidth: "360px",
@@ -22,8 +22,8 @@ const ChallengeIndexCard = ({ challenge }) => {
         style={{maxHeight:'100%', maxWidth:'100%'}}
         
       />
-      <div className="card-body" style={{display:'flex', justifyContent:'space-between', flexDirection:'column'}}>
-        <h5 className="card-title"> {challenge.activity_title} </h5>
+      <div className="card-body pad-5" style={{display:'flex', justifyContent:'space-between', flexDirection:'column'}}>
+        <h5 className="card-title"> {challenge.name} </h5>
         <p className="card-text"> {challenge.purpose} </p>
         <ul className="list-group list-group-flush">
           <li className="list-group-item">

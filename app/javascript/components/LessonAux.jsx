@@ -24,13 +24,13 @@ const LessonAux = ({ lessonPlan }) => {
         <div className="row nested-row">
           <div className="col-12">
             {(lessonPlan.activity_category.toLowerCase() === "warmup" && (
-              <h3>Warm Up: {" " + challenge.activity_title}</h3>
+              <h3>Warm Up: {" " + challenge.name}</h3>
             )) ||
               (lessonPlan.activity_category.toLowerCase() === "cooldown" && (
-                <h3>Cool Down: {" " + challenge.activity_title}</h3>
+                <h3>Cool Down: {" " + challenge.name}</h3>
               )) ||
               (lessonPlan.activity_category.toLowerCase() === "homework" && (
-                <h3>Homework: {" " + challenge.activity_title}</h3>
+                <h3>Homework: {" " + challenge.name}</h3>
               ))}
           </div>
           <div className="col-12">
