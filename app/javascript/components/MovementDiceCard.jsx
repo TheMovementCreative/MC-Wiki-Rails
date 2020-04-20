@@ -8,7 +8,7 @@ const MovementDiceCard = ({ challenge }) => {
         className="col-12 col-md-4"
         
       >
-        <h3>{challenge.activity_title} </h3><hr/>
+        <h3>{challenge.name} </h3><hr/>
       
         <p>{challenge.purpose}</p>
       </div>

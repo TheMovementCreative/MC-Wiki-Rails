@@ -16,7 +16,7 @@ module API
 
     private
         def challenge_params
-            params.require(:challenge).permit(:activity_title, :purpose, :space, :goal, :challenge, :actions_movements, :tools, :rules, :video_url, :image_url)
+            params.require(:challenge).permit(:name, :purpose, :space, :goal, :challenge, :actions_movements, :tools, :rules, :video_url, :image_url)
         end
   end
 end 
