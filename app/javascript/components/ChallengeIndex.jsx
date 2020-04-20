@@ -11,7 +11,7 @@ const ChallengeIndex = ({ }) => {
 const [challenges, setChallenges] = useState([]);
 
 const fetchChallenges = async () => {
-  const resultChallenges = await axios( Constants.BASEURL+"/api/challenges/");
+  const resultChallenges = await axios(`${Constants.BASEURL}/api/challenges/`);
   setChallenges(resultChallenges.data);
 };
 
