@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_30_145157) do
+ActiveRecord::Schema.define(version: 2020_04_19_222106) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -37,6 +37,8 @@ ActiveRecord::Schema.define(version: 2020_03_30_145157) do
     t.bigint "lesson_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "activity_category"
+    t.text "rules_override"
     t.index ["challenge_id"], name: "index_lesson_plans_on_challenge_id"
     t.index ["lesson_id"], name: "index_lesson_plans_on_lesson_id"
   end

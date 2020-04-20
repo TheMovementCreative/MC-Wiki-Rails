@@ -13,7 +13,7 @@ class LessonPlansController < ApplicationController
 
    private
    def lesson_plan_params
-      params.require(:lesson_plan).permit(:lesson_id, :challenge_id)
+      params.require(:lesson_plan).permit(:lesson_id, :challenge_id, :type, :rules_override)
    end
 
 end
