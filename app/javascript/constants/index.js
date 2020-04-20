@@ -1,1 +1,1 @@
-export const BASEURL = process.env.baseURL || "http://localhost:3000"
+export const BASEURL = process.env.BASE_URL || "http://localhost:3000"
