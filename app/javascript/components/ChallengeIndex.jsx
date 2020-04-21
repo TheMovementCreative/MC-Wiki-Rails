@@ -4,14 +4,13 @@ import ChallengeIndexCard from "./ChallengeIndexCard";
 import "../stylesheets/application.scss";
 import * as Constants from '../constants';
 import axios from 'axios';
-
-console.log("baseURL",Constants.BASEURL)
+const BASEURL = process.env.BASE_URL || "http://localhost:3000"
 
 const ChallengeIndex = ({ }) => {
 const [challenges, setChallenges] = useState([]);
 
 const fetchChallenges = async () => {
-  const resultChallenges = await axios(`${Constants.BASEURL}/api/challenges/`);
+  const resultChallenges = await axios( BASEURL+"/api/challenges/");
   setChallenges(resultChallenges.data);
 };
 
