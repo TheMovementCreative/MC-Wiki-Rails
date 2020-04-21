@@ -1,13 +1,13 @@
 {
-  "application.js": "/packs/js/application-34a1b8ceca708c300ad2.js",
-  "application.js.map": "/packs/js/application-34a1b8ceca708c300ad2.js.map",
+  "application.js": "/packs/js/application-8fb014504268caa5ed04.js",
+  "application.js.map": "/packs/js/application-8fb014504268caa5ed04.js.map",
   "entrypoints": {
     "application": {
       "js": [
-        "/packs/js/application-34a1b8ceca708c300ad2.js"
+        "/packs/js/application-8fb014504268caa5ed04.js"
       ],
       "js.map": [
-        "/packs/js/application-34a1b8ceca708c300ad2.js.map"
+        "/packs/js/application-8fb014504268caa5ed04.js.map"
       ]
     },
     "hello_react": {
@@ -20,10 +20,10 @@
     },
     "server_rendering": {
       "js": [
-        "/packs/js/server_rendering-857d61031f978189a0b2.js"
+        "/packs/js/server_rendering-25ce70c5e38c997c08f8.js"
       ],
       "js.map": [
-        "/packs/js/server_rendering-857d61031f978189a0b2.js.map"
+        "/packs/js/server_rendering-25ce70c5e38c997c08f8.js.map"
       ]
     }
   },
@@ -35,6 +35,6 @@
   "media/images/mike_profile_pic.jpg": "/packs/media/images/mike_profile_pic-6ca3549b.jpg",
   "media/images/pkPrivate.png": "/packs/media/images/pkPrivate-62e42e15.png",
   "media/images/woodTrainer.jpg": "/packs/media/images/woodTrainer-aba75db0.jpg",
-  "server_rendering.js": "/packs/js/server_rendering-857d61031f978189a0b2.js",
-  "server_rendering.js.map": "/packs/js/server_rendering-857d61031f978189a0b2.js.map"
+  "server_rendering.js": "/packs/js/server_rendering-25ce70c5e38c997c08f8.js",
+  "server_rendering.js.map": "/packs/js/server_rendering-25ce70c5e38c997c08f8.js.map"
 }
