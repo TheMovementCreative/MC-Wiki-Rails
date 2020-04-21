@@ -4,7 +4,7 @@ import ChallengeIndexCard from "./ChallengeIndexCard";
 import "../stylesheets/application.scss";
 import * as Constants from '../constants';
 import axios from 'axios';
-const BASEURL = process.env.BASE_URL || "http://localhost:3000"
+const BASEURL = process.env.BASE_URL 
 
 const ChallengeIndex = ({ }) => {
 const [challenges, setChallenges] = useState([]);
