@@ -10,6 +10,8 @@ const LessonFrame = ({ lessonID, index }) => {
   const [lessonPlans, setLessonPlans] = useState([]);
 
   const fetchLesson = async () => {
+    setLesson(null);
+    setLessonPlans(null);
     const resultLesson = await axios(
       Constants.BASEURL + "/api/lessons/" + lessonID
     );
@@ -24,7 +26,10 @@ const LessonFrame = ({ lessonID, index }) => {
     fetchLesson();
   }, []);
 
-  if (lesson) {
+  if (lesson && lessonPlans) {
+
+    if(lesson.id !== lessonID){fetchLesson()}
+
     const warmUp = lessonPlans.find(
       (plan) => plan.activity_category === "warmup"
     );
@@ -35,10 +40,12 @@ const LessonFrame = ({ lessonID, index }) => {
       (plan) => plan.activity_category === "homework"
     );
 
+    
+    
     return (
       <React.Fragment key={lesson.id + index}>
         <div
-          className="container-fluid row"
+          className="container-fluid row nested-row"
           style={{ display: "flex", justifyContent: "center" }}
         >
           <div className="embed-responsive embed-responsive-16by9 col-sm">
@@ -80,7 +87,7 @@ const LessonFrame = ({ lessonID, index }) => {
           {lessonPlans.map((lessonPlan, challengeIndex) => (
             <React.Fragment>
               {!lessonPlan.activity_category && (
-                <div key={lessonPlan.challengeID}>
+                <div key={challengeIndex}>
                   <ListFrameListItem
                     challengeID={lessonPlan.challenge_id}
                     index={challengeIndex}

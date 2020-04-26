@@ -9,6 +9,7 @@ const LessonInfo = ({ lessonID, index, listed}) => {
   const [lesson, setLesson] = useState();
 
   const fetchLesson = async () => {
+    setLesson(null);
     const resultLesson = await axios(Constants.BASEURL+"/api/lessons/"+lessonID);
     setLesson(resultLesson.data);
     
@@ -20,8 +21,9 @@ const LessonInfo = ({ lessonID, index, listed}) => {
   
   }, []);
 
-
+  
     if(lesson){
+      if(lesson.id !== lessonID){fetchLesson()}
     return(
         <React.Fragment>
         <div className="container-fluid tmc-bg-blu tmc-white" style = {{display: 'flex', alignItems: 'center'}}>
