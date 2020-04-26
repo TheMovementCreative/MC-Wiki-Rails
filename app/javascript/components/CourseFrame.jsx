@@ -13,6 +13,25 @@ const CourseFrame = ({lessonIDs}) => {
 const [isCollapsed, setIsCollapsed] = useState(true);
 
 
+const [course, setCourse] = useState();
+const [coursePlans, setCoursePlans] = useState([]);
+
+const fetchCourse = async () => {
+  const resultCourse = await axios(
+    Constants.BASEURL + "/api/courses/" + CourseID
+  );
+  const resultCoursePlan = await axios(
+    Constants.BASEURL + "/api/course_plans/?course_id=" + CourseID
+  );
+  setCourse(resultCourse.data);
+  setCoursePlans(resultCoursePlan.data);
+};
+
+useEffect(() => {
+  fetchCourse();
+}, []);
+
+
 
 return(
 <React.Fragment>

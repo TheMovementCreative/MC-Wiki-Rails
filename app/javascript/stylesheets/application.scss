@@ -14,7 +14,9 @@ strong {color: $dk-blue; font-family: 'Montserrat', sans-serif;}
 .tmc-bg-grey{background-color: $grey;}
 .tmc-bg-dk-blu{background-color: $dk-blue;}
 .tmc-orng{color: #E76F27; font-family: 'Montserrat', sans-serif;}
+.tmc-bg-orng{background-color: $orange;}
 .tmc-white{color: white;font-family: 'Montserrat', sans-serif;}
+.tmc-bg-white{background-color: white;}
 .tmc-dk-blu{color: #2D465A; font-family: 'Montserrat', sans-serif;}
 .tmc-blu{color: #00A1E0; font-family: 'Montserrat', sans-serif;}
 .tmc-bg-blu{background-color: #00A1E0;}
@@ -47,3 +49,9 @@ strong {color: $dk-blue; font-family: 'Montserrat', sans-serif;}
 }
 
 .shadow-box{box-shadow: 6px 4px 20px -1px rgba(107,107,107,0.62);}
+
+
+
+.lesson-menu-item-wrapper{border-color: $dk-blue; border-style: outset ; color: $white; }
+.lesson-menu-item-wrapper:hover{ background-color: $orange; }
+.lesson-menu-item-wrapper:active{border-style: inset; box-shadow:none ;}
