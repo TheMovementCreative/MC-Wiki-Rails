@@ -34,7 +34,7 @@ const Home = ({ challenges, lessons }) => {
           }}
         >
           <div className="col">
-            <h2>Welcome to Move More!</h2>
+            <h2>Welcome to Move More!!!</h2>
           </div>
         </div>
 
