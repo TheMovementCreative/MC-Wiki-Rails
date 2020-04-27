@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_20_212141) do
+ActiveRecord::Schema.define(version: 2020_04_27_200958) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -82,6 +82,27 @@ ActiveRecord::Schema.define(version: 2020_04_20_212141) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.boolean "publish"
+  end
+
+  create_table "pages", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "page_heading"
+    t.string "message_heading"
+    t.text "message_body"
+    t.text "ad_1_heading"
+    t.string "ad_1_button"
+    t.string "ad_1_url"
+    t.text "ad_2_heading"
+    t.string "ad_2_button"
+    t.string "ad_2_url"
+    t.text "ad_3_heading"
+    t.string "ad_3_button"
+    t.string "ad_3_url"
+    t.bigint "featured_challenge_id"
+    t.bigint "featured_lesson_id"
+    t.boolean "published"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "users", force: :cascade do |t|

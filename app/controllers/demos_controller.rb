@@ -9,5 +9,6 @@ end
 def home
     @challenges = Challenge.all
     @lessons = Lesson.all
+    @page = Page.where(name: 'home').first
 end
 end

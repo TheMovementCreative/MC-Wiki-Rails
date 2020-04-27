@@ -63,8 +63,7 @@ const HomeFeatureCard = ({ type, featuredItem }) => {
               href={"/challenges/" + featuredItem.id}
               className="btn btn-primary btn-sm"
             >
-              View Full Challenge <small>&#x25B6;</small>{" "}
-              <small>&#x25B6;</small> <small>&#x25B6;</small>
+              View Full Challenge <small>&#x25B6;</small>
             </a>
           )}
           {type.toUpperCase() === "LESSON" && (
@@ -72,8 +71,7 @@ const HomeFeatureCard = ({ type, featuredItem }) => {
               href={"/lessons/" + featuredItem.id}
               className="btn btn-primary btn-sm"
             >
-              View Full Lesson <small>&#x25B6;</small> <small>&#x25B6;</small>{" "}
-              <small>&#x25B6;</small>
+              View Full Lesson <small>&#x25B6;</small>
             </a>
           )}
         </footer>

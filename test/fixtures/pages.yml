@@ -1,0 +1,31 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  page_heading: MyString
+  message_heading: MyString
+  message_body: MyText
+  ad_1_heading: MyString
+  ad_1_url: MyString
+  ad_2_heading: MyString
+  ad_2_url: MyString
+  ad_3_heading: MyString
+  ad_3_link: MyString
+  featured_challenge_id: 
+  featured_lesson_id: 
+  published: false
+
+two:
+  name: MyString
+  page_heading: MyString
+  message_heading: MyString
+  message_body: MyText
+  ad_1_heading: MyString
+  ad_1_url: MyString
+  ad_2_heading: MyString
+  ad_2_url: MyString
+  ad_3_heading: MyString
+  ad_3_link: MyString
+  featured_challenge_id: 
+  featured_lesson_id: 
+  published: false
