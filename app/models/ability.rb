@@ -5,12 +5,12 @@ class Ability
 
   def initialize(user)
     can :read, :all
-    if user.superadmin_role?
+    if user && user.superadmin_role?
       p "SUPER ADMIN"
       can :manage, User
       can :manage, :all
     end
-    if user.supervisor_role?
+    if user && user.supervisor_role?
       p "SUPERVISOR"
       can :create, Challenge
       can :read, Challenge
@@ -25,7 +25,7 @@ class Ability
       cannot :destroy, Challenge
     end
 
-    if user.user_role?
+    if user && user.user_role?
       p "USER"
       cannot :manage, :rails_admin
     end
