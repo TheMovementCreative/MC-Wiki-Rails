@@ -1,0 +1,21 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user_id: 
+  stripe_id: MyString
+  stripe_subscription_id: MyString
+  card_last_4: MyString
+  card_expiry_month: 1
+  card_expiry_year: 
+  card_type: MyString
+  subscribed: false
+
+two:
+  user_id: 
+  stripe_id: MyString
+  stripe_subscription_id: MyString
+  card_last_4: MyString
+  card_expiry_month: 1
+  card_expiry_year: 
+  card_type: MyString
+  subscribed: false

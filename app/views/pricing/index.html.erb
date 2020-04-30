@@ -1,0 +1,28 @@
+<%= render :partial => 'shared/sub_nav_top' %>
+
+<div class="row">
+
+div class = 'col'>
+<button class="btn-primary"> $39.99/mo 
+<% if user_signed_in? %>
+<%= link_to 'Subscribe', new_subscription_path(plan: "member", plan_id: Rails.application.credentials.member) %>
+<% else %>
+<%= link_to 'Subscribe', new_user_registration_path %>
+<% end %></btn>
+</div>
+
+<div class="col">
+<button class="btn-primary"> $19.99/mo 
+<% if user_signed_in? %>
+<%= link_to 'Subscribe', new_subscription_path(plan: "regular", plan_id: Rails.application.credentials.regular) %>
+<% else %>
+<%= link_to 'Subscribe', new_user_registration_path %>
+<% end %>
+</btn>
+</div>
+
+<div class="col">
+<button class="btn-primary"> $4.99/mo </btn>
+</div>
+
+</div>
