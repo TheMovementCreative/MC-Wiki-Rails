@@ -1,6 +1,6 @@
 <%= render :partial => 'shared/sub_nav_top' %>
 
-<div class="container-fluid">
+<div class="container-fluid shadow-box py-2" style="min-width: 200px ;max-width: 300px">
 <p> Chosen Plan: <strong> <%= params[:plan] %></strong></p>
 <hr/>
 <%= form_tag subscriptions_path, id: "payment-form" do |form| %>
@@ -12,7 +12,10 @@
         </div>
         <div id="card-errors" role="alert"></div>
         <%= hidden_field_tag :plan_id, params[:plan_id] %>
-        <button class="btn-primary"> Submit </button>
+        <hr/>
+        
+        <button class="btn-primary"> Submit </button> </br>
+        <img class="img-fluid" src="<%= image_path('secure-stripe-payment-logo.png') %>"> </img>
         </div>
         </div>
         <% end %>

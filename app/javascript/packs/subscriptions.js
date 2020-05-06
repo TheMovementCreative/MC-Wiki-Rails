@@ -4,7 +4,7 @@ document.addEventListener('turbolinks:load', function(){
 
     const elements = stripe.elements({
         fonts: [{
-            cssSrc: "http://rsms.me/inter/inter-ui.css"
+            cssSrc: ""
         }],
         locale: "auto"
     });

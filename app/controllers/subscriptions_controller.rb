@@ -1,12 +1,15 @@
 class SubscriptionsController < ApplicationController
-    # may require javascript_include_tag 'https://js.stripe.com/v3/', 'data-turbolinks-track'
-    # <%= tag :meta, name: "stripe-key", content: Rails.application.credentials.stripe_publishable_key %>
+
     before_action :authenticate_user!, except: [:new, :create]
     layout "subs"
     def new
-        if current_user.subscribed?
+        if current_user.subscription && current_user.subscription.stripe_subscription_id?
             redirect_to root_path, notice: "You're already subscribed"
         end
+    end
+
+    def index
+
     end
     
     def create
@@ -46,10 +49,12 @@ class SubscriptionsController < ApplicationController
     end
 
     def destroy
+        Stripe.api_key = Rails.application.credentials.stripe_api_key
         customer = Stripe::Customer.retrieve(current_user.subscription.stripe_id)
         customer.subscriptions.retrieve(current_user.subscription.stripe_subscription_id).delete
         current_user.subscription.update(stripe_subscription_id: nil)
         current_user.subscribed = false;
+        current_user.subscription.subscribed = false;
 
         redirect_to root_path, notice: "Your membership has been terminated."
     end

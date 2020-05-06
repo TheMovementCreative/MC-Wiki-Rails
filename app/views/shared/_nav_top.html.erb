@@ -16,6 +16,9 @@
                 <a class="nav-link" href="/"> Home </a>
             </li>
             <% if !current_user.nil? %>
+            <li class="nav-item">
+            <a class="nav-link" href=<%= "/profile/?id=" + current_user.id.to_s %> > Profile </a>
+            </li>
                 <li class="nav-item"> 
                     <a class="nav-link" href="/challenges/index"> Challenges </a>
                 </li>
