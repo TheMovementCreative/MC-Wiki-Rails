@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
 
-  devise_for :users
+  
+  devise_for :users, controllers: {registrations: "registrations"}
+  get 'profile' => 'users#profile'
 
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   # For details on the SL available within this file, see https://guides.rubyonrails.org/routing.html
@@ -17,9 +19,14 @@ Rails.application.routes.draw do
   get 'challenges/index'
   resources :challenges
  
-
+  resources :pricing, only: [:index]
   get'lessons/index'
   resources :lessons
+
+  resources :subscriptions
+  post 'subscriptions/new'
+  get 'subscriptions/destroy'
+  
 
   get'courses/index'
   resources :courses

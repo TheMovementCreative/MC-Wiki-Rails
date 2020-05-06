@@ -10,32 +10,7 @@
      
     </span>
     
-    <div class="collapse navbar-collapse mr-auto" id="navbarList">
-        <ul class="navbar-nav mr-auto mt-2 mt-lg-0" >
-            <li class="nav-item"> 
-                <a class="nav-link" href="/"> Home </a>
-            </li>
-            <% if !current_user.nil? %>
-            <li class="nav-item">
-            <a class="nav-link" href=<%= "/profile/?id=" + current_user.id.to_s %> > Profile </a>
-            </li>
-                <li class="nav-item"> 
-                    <a class="nav-link" href="/challenges/index"> Challenges </a>
-                </li>
-                <li class="nav-item"> 
-                    <a class="nav-link" href="/lessons/index"> Lessons </a>
-                </li>
-                <li class="nav-item disabled"> 
-                    <a class="nav-link" href="#"> Courses </a>
-                </li>
-                <% if current_user.supervisor_role? or current_user.superadmin_role? %>
-                <li class="nav-item">
-                    <a class="nav-link" href="/admin"> Admin </a>
-                </li>
-                <% end %>
-            <% end %>
-        </ul>
-    </div>
+
 
     <div class="navbar-nav ml-auto">
         <ul class="navbar-nav ml-auto mt-2 mt-lg-0" style= "display:flex; justify-content:space-between;">

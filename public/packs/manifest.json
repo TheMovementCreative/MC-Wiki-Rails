@@ -25,6 +25,14 @@
       "js.map": [
         "/packs/js/server_rendering-a99508249846b61b68e0.js.map"
       ]
+    },
+    "subscriptions": {
+      "js": [
+        "/packs/js/subscriptions-cc309f2b84675cbbc7a3.js"
+      ],
+      "js.map": [
+        "/packs/js/subscriptions-cc309f2b84675cbbc7a3.js.map"
+      ]
     }
   },
   "hello_react.js": "/packs/js/hello_react-743478361023821b4608.js",
@@ -36,5 +44,7 @@
   "media/images/pkPrivate.png": "/packs/media/images/pkPrivate-62e42e15.png",
   "media/images/woodTrainer.jpg": "/packs/media/images/woodTrainer-aba75db0.jpg",
   "server_rendering.js": "/packs/js/server_rendering-a99508249846b61b68e0.js",
-  "server_rendering.js.map": "/packs/js/server_rendering-a99508249846b61b68e0.js.map"
+  "server_rendering.js.map": "/packs/js/server_rendering-a99508249846b61b68e0.js.map",
+  "subscriptions.js": "/packs/js/subscriptions-cc309f2b84675cbbc7a3.js",
+  "subscriptions.js.map": "/packs/js/subscriptions-cc309f2b84675cbbc7a3.js.map"
 }
