@@ -33,6 +33,7 @@ strong {color: $dk-blue; font-family: 'Montserrat', sans-serif;}
 .pad-x-5{padding-left: 5px;padding-right: 5px; padding-top: 0; padding-bottom: 0;}
 .pad-y-5{padding-top: 5px;padding-bottom: 5px; padding-right: 0;padding-left: 0;}
 
+.allow-breaks{white-space: pre-wrap;}
 .just-c-between{display: flex; justify-content:space-between;}
 .center-flex{display: flex; justify-content:center;align-items:center; ;}
 .center-spread{display: flex; justify-content:space-between; align-items:center;}

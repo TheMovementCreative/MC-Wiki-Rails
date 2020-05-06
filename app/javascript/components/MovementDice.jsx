@@ -29,7 +29,7 @@ const MovementDice = ({ challenges }) => {
       <div className="col-12 col-md-12" style={{display: 'flex', justifyContent:'center',alignItems:'center'}}>
         
         
-        <div className="text-center">
+        <div className="text-center mb-1">
           <button>
             <img
               src={dice}

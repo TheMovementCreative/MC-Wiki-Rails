@@ -1,7 +1,7 @@
 
-<div class="container-fluid nest-col ">
+
 
 
 <%= render :partial => 'shared/nav_top' %>
-<%= react_component("Home", {challenges: @challenges, lessons:@lessons }) %>
-</div>
+<%= react_component("Home", {challenges: @challenges, lessons:@lessons, page:@page }) %>
+
