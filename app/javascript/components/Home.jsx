@@ -5,7 +5,6 @@ import HomeFeatueCard from "./HomeFeatureCard";
 import mikePic from "../../assets/images/mike_profile_pic";
 import * as Constants from '../constants';
 import axios from "axios";
-require('dotenv').config()
 
 const Home = ({ challenges, lessons, page }) => {
   const [featuredChallenge, setFeaturedChallenge] = useState();
@@ -13,7 +12,7 @@ const Home = ({ challenges, lessons, page }) => {
 
   const fetchFeatures = async () => {
     const resultChallenge = await axios(Constants.BASEURLPRO+"/api/challenges/"+( page.featured_challenge_id));
-    const resultLesson = await axios((REACT_APP_BASE_URL || Constants.BASEURL) +"/api/lessons/"+ (page.featured_lesson_id));
+    const resultLesson = await axios(Constants.BASEURL +"/api/lessons/"+ (page.featured_lesson_id));
     setFeaturedChallenge(resultChallenge.data);
     setFeaturedLesson(resultLesson.data);
   };
