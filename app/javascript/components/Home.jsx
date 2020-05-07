@@ -12,7 +12,7 @@ const Home = ({ challenges, lessons, page }) => {
 
   const fetchFeatures = async () => {
     const resultChallenge = await axios(Constants.BASEURLPRO+"/api/challenges/"+( page.featured_challenge_id));
-    const resultLesson = await axios(REACT_APP_BASE_URL+"/api/lessons/"+ (page.featured_lesson_id));
+    const resultLesson = await axios(Constants.BASEURLPRO+"/api/lessons/"+ (page.featured_lesson_id));
     setFeaturedChallenge(resultChallenge.data);
     setFeaturedLesson(resultLesson.data);
   };
