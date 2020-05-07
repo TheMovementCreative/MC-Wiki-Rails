@@ -11,8 +11,8 @@ const Home = ({ challenges, lessons, page }) => {
   const [featuredLesson, setFeaturedLesson] = useState();
 
   const fetchFeatures = async () => {
-    const resultChallenge = await axios(process.env.REACT_APP_BASE_URL+"/api/challenges/"+( page.featured_challenge_id));
-    const resultLesson = await axios(process.env.REACT_APP_BASE_URL+"/api/lessons/"+ (page.featured_lesson_id));
+    const resultChallenge = await axios(Constants.BASEURL+"/api/challenges/"+( page.featured_challenge_id));
+    const resultLesson = await axios(Constants.BASEURL+"/api/lessons/"+ (page.featured_lesson_id));
     setFeaturedChallenge(resultChallenge.data);
     setFeaturedLesson(resultLesson.data);
   };
@@ -39,6 +39,7 @@ const Home = ({ challenges, lessons, page }) => {
         </div>
 
         <div className=" row nested-row ">
+      {window.location.protocol+"//"+window.location.hostname}
           <div className="col-12 col-sm nest-col shadow-box">
 
             {featuredChallenge && (
