@@ -39,7 +39,6 @@ const Home = ({ challenges, lessons, page }) => {
         </div>
 
         <div className=" row nested-row ">
-      {window.location.protocol+"//"+window.location.hostname}
           <div className="col-12 col-sm nest-col shadow-box">
 
             {featuredChallenge && (
