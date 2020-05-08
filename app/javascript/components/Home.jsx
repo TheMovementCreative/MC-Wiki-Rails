@@ -24,6 +24,7 @@ const Home = ({ challenges, lessons, page }) => {
 
   return (
     <React.Fragment>
+      
       <div className="container-fluid nest-col">
         <div
           className="row tmc-bg-blu tmc-white mb-4 py-2"
