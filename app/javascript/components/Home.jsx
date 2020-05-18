@@ -89,7 +89,7 @@ const Home = ({ challenges, lessons, page }) => {
                 </strong>
                 <a
                   className="btn-lg btn-primary my-2"
-                  href={"/challenges"}
+                  href={"/challenges/index"}
                 >
                   Browse <small>&#x25B6;</small>
                   
@@ -180,7 +180,7 @@ const Home = ({ challenges, lessons, page }) => {
                 <strong>Select from {lessons.length} unique Lessons!</strong>
                 <a
                   className="btn btn-primary my-2"
-                  href="/lessons"
+                  href="/lessons/index"
                  
                 >
                   Browse <small>&#x25B6;</small>
