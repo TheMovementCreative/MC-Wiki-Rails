@@ -60,12 +60,13 @@ const LessonAux = ({ lessonPlan }) => {
           <br />
           {isExpanded && (
             <React.Fragment>
-              <div className="col-12">
+              <div className="col-6">
+                <br/>
                 <p>{lessonPlan.rules_override || challenge.rules}</p>
               </div>
 
-              <div className="col-12">
-                <div className="embed-responsive embed-responsive-16by9 col-sm">
+              <div className="col-6">
+                <div className="embed-responsive embed-responsive-16by9">
                   <iframe
                     className="embed-responsive-item"
                     src={

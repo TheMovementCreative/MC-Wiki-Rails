@@ -2,19 +2,29 @@ import React, { useState, useEffect } from "react";
 import PropTypes, { string } from "prop-types";
 import MovementDice from "./MovementDice";
 import HomeFeatueCard from "./HomeFeatureCard";
-import mikePic from "../../assets/images/mike_profile_pic";
+import mikePic from "../../assets/images/MC_Logo.png";
 import * as Constants from '../constants';
 import axios from "axios";
 
 const Home = ({ challenges, lessons, page }) => {
   const [featuredChallenge, setFeaturedChallenge] = useState();
   const [featuredLesson, setFeaturedLesson] = useState();
+  const [publishedLessons, setPublishedLessons] = useState([]);
+  const [publishedChallenges, setPublishedChallenges] = useState([]);
+
+
 
   const fetchFeatures = async () => {
     const resultChallenge = await axios(Constants.BASEURL+"/api/challenges/"+( page.featured_challenge_id));
     const resultLesson = await axios(Constants.BASEURL+"/api/lessons/"+ (page.featured_lesson_id));
+
+    const resultPublishedChallenges = await axios(Constants.BASEURL+"/api/challenges/?publish=true");
+    const resultPublishedLesson = await axios(Constants.BASEURL+"/api/lessons/?publish=true");
+
     setFeaturedChallenge(resultChallenge.data);
     setFeaturedLesson(resultLesson.data);
+    setPublishedChallenges(resultPublishedChallenges.data);
+    setPublishedLessons(resultPublishedLesson.data);
   };
 
   useEffect(() => {
@@ -85,7 +95,7 @@ const Home = ({ challenges, lessons, page }) => {
                 }}
               >
                 <strong>
-                  Select from {challenges.length} unique activities!
+                  Select from {publishedChallenges.length} unique activities!
                 </strong>
                 <a
                   className="btn-lg btn-primary my-2"
@@ -148,11 +158,11 @@ const Home = ({ challenges, lessons, page }) => {
                     <p>{featuredLesson.author}</p>
                   </div>
                   <div className="col-5 col-sm-12 nest-col ">
-                    <img src={mikePic} />
+                    <img src={mikePic} style = {{height: '100px', width: "100px"}} />
                   </div>
                   <div className="col-12 nest-col">
                     <hr />
-                    <h4>Activities included: </h4>
+                    <h4>Summary: </h4>
                     <p>
                       {featuredLesson.details !== null &&
                         featuredLesson.details.slice(0, 100)}
@@ -177,7 +187,7 @@ const Home = ({ challenges, lessons, page }) => {
                   
                 }}
               >
-                <strong>Select from {lessons.length} unique Lessons!</strong>
+                <strong>Select from {publishedLessons.length} unique Lessons!</strong>
                 <a
                   className="btn btn-primary my-2"
                   href="/lessons/index"

@@ -3,7 +3,12 @@ module API
     
     def index
       if current_user
+        if  params[:publish]
+          @publish = params[:publish]
+          @challenges = Challenge.where(publish:@publish)
+        else
         @challenges = Challenge.all
+        end
         render json: @challenges
       end
     end 

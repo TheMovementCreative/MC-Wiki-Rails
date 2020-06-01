@@ -70,8 +70,8 @@ return(
               }
             ></iframe>
           </div></div>
-                    <div className="col-12 col-sm-6 details"><hr/><p>{course.details}</p></div>
-                    <div className="col-12 details"><hr/><p>{course.details}</p></div>
+                    <div className="col-12 col-sm-6 details"><h3> Details </h3><hr/><p>{course.details}</p></div>
+                    
                 </div>
             </div>
 

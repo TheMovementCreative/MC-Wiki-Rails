@@ -10,7 +10,7 @@ const LessonIndex = ({ }) => {
 const [lessons, setLessons] = useState([]);
 
 const fetchLessons = async () => {
-  const resultLessons = await axios( Constants.BASEURL+"/api/lessons/");
+  const resultLessons = await axios( Constants.BASEURL+"/api/lessons/?publish=true");
   setLessons(resultLessons.data);
 };
 

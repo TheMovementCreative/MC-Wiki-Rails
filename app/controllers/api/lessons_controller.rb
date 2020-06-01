@@ -4,7 +4,12 @@ module API
     # GET /lessons
     # GET /lessons.json
     def index
+      if  params[:publish]
+        @publish = params[:publish]
+        @lessons = Lesson.where(publish:@publish)
+      else
       @lessons = Lesson.all
+      end
       render json: @lessons
     end
 
