@@ -11,7 +11,13 @@ class LessonsController < ApplicationController
   # GET /lessons/1
   # GET /lessons/1.json
   def show
-    
+    lesson = Lesson.find(params[:id])
+
+    if (helpers.show_auth(lesson, helpers.current_user_plan(current_user)))
+    @lesson = lesson
+    else
+      redirect_to root_path
+    end
   end
 
   # GET /lessons/new

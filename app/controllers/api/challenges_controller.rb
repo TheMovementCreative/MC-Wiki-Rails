@@ -3,9 +3,22 @@ module API
     
     def index
       if current_user
-        if  params[:publish]
+        if  params[:publish] && !params[:sub]
           @publish = params[:publish]
           @challenges = Challenge.where(publish:@publish)
+        elsif params[:publish] && params[:sub]
+          @publish = params[:publish]
+          if params[:sub] == "warrior"
+            @challenges = Challenge.where(publish:@publish, warrior_tier: true)
+          elsif params[:sub] == "challenger"
+            @challenges = Challenge.where(publish:@publish, challenger_tier: true)
+          elsif params[:sub] == "champion"
+            @challenges = Challenge.where(publish:@publish)
+          elsif params[:sub] == "admin"
+            @challenges = Challenge.all
+          else
+            @challenges = nil
+          end          
         else
         @challenges = Challenge.all
         end

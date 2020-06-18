@@ -6,7 +6,7 @@ import mikePic from "../../assets/images/MC_Logo.png";
 import * as Constants from '../constants';
 import axios from "axios";
 
-const Home = ({ challenges, lessons, page }) => {
+const Home = ({ challenges, lessons, page, subType }) => {
   const [featuredChallenge, setFeaturedChallenge] = useState();
   const [featuredLesson, setFeaturedLesson] = useState();
   const [publishedLessons, setPublishedLessons] = useState([]);
@@ -18,8 +18,8 @@ const Home = ({ challenges, lessons, page }) => {
     const resultChallenge = await axios(Constants.BASEURL+"/api/challenges/"+( page.featured_challenge_id));
     const resultLesson = await axios(Constants.BASEURL+"/api/lessons/"+ (page.featured_lesson_id));
 
-    const resultPublishedChallenges = await axios(Constants.BASEURL+"/api/challenges/?publish=true");
-    const resultPublishedLesson = await axios(Constants.BASEURL+"/api/lessons/?publish=true");
+    const resultPublishedChallenges = await axios(Constants.BASEURL+"/api/challenges/?publish=true&sub="+ subType);
+    const resultPublishedLesson = await axios(Constants.BASEURL+"/api/lessons/?publish=true&sub="+ subType);
 
     setFeaturedChallenge(resultChallenge.data);
     setFeaturedLesson(resultLesson.data);
@@ -50,6 +50,7 @@ const Home = ({ challenges, lessons, page }) => {
         </div>
 
         <div className=" row nested-row ">
+        
           <div className="col-12 col-sm nest-col shadow-box">
 
             {featuredChallenge && (
@@ -140,7 +141,7 @@ const Home = ({ challenges, lessons, page }) => {
               <strong>Give the Movement Dice a roll!</strong>
             </header>
 
-            <MovementDice challenges={challenges} />
+            <MovementDice challenges={publishedChallenges} />
           </div>
         </div>
 

@@ -1,7 +1,7 @@
 <%= render :partial => 'shared/nav_top' %>
 
   <div class="container-fluid" style="">
-              <%= react_component("ChallengeIndex") %>    
+              <%= react_component("ChallengeIndex", {subType: current_user_plan(current_user)}) %>    
 </div>
 
  

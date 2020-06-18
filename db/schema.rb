@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_04_225545) do
+ActiveRecord::Schema.define(version: 2020_06_17_213158) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -31,6 +31,8 @@ ActiveRecord::Schema.define(version: 2020_05_04_225545) do
     t.boolean "apartment_friendly"
     t.boolean "beginner_friendly"
     t.boolean "publish"
+    t.boolean "challenger_tier"
+    t.boolean "warrior_tier"
   end
 
   create_table "course_plans", force: :cascade do |t|
@@ -55,6 +57,8 @@ ActiveRecord::Schema.define(version: 2020_05_04_225545) do
     t.string "image_url"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.boolean "challenger_tier"
+    t.boolean "warrior_tier"
     t.index ["name"], name: "index_courses_on_name", unique: true
   end
 
@@ -82,6 +86,8 @@ ActiveRecord::Schema.define(version: 2020_05_04_225545) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.boolean "publish"
+    t.boolean "challenger_tier"
+    t.boolean "warrior_tier"
   end
 
   create_table "pages", force: :cascade do |t|
@@ -116,6 +122,7 @@ ActiveRecord::Schema.define(version: 2020_05_04_225545) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "user_id"
+    t.string "stripe_price_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -129,7 +136,7 @@ ActiveRecord::Schema.define(version: 2020_05_04_225545) do
     t.datetime "updated_at", precision: 6, null: false
     t.boolean "superadmin_role"
     t.boolean "supervisor_role"
-    t.boolean "user_role"
+    t.boolean "user_role", default: true
     t.boolean "subscribed"
     t.string "first_name"
     t.string "last_name"

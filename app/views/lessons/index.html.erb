@@ -3,5 +3,5 @@
   <div class="container-fluid" style="">
 
   
-              <%= react_component("LessonIndex", { lessons: @lessons}) %>    
+              <%= react_component("LessonIndex", {subType: current_user_plan(current_user)}) %>    
 </div>

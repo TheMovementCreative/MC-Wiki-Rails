@@ -3,5 +3,5 @@
 
 
 <%= render :partial => 'shared/nav_top' %>
-<%= react_component("Home", {challenges: @challenges, lessons:@lessons, page:@page }) %>
+<%= react_component("Home", {challenges: @challenges, lessons:@lessons, page:@page, subType: current_user_plan(current_user) }) %>
 

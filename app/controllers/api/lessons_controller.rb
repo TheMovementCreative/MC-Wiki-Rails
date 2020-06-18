@@ -4,9 +4,22 @@ module API
     # GET /lessons
     # GET /lessons.json
     def index
-      if  params[:publish]
+      if  params[:publish] && !params[:sub]
         @publish = params[:publish]
         @lessons = Lesson.where(publish:@publish)
+      elsif params[:publish] && params[:sub]
+        @publish = params[:publish]
+        if params[:sub] == "warrior"
+          @lessons = Lesson.where(publish:@publish, warrior_tier: true)
+        elsif params[:sub] == "challenger"
+          @lessons = Lesson.where(publish:@publish, challenger_tier: true)
+        elsif params[:sub] == "champion"
+          @lessons = Lesson.where(publish:@publish)
+        elsif params[:sub] == "admin"
+          @lessons = Lesson.all
+        else
+          @lessons = nil
+        end          
       else
       @lessons = Lesson.all
       end
