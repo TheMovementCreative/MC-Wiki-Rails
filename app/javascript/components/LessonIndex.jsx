@@ -4,13 +4,13 @@ import LessonIndexCard from "./LessonIndexCard";
 import axios from 'axios';
 import * as Constants from '../constants';
 
-const LessonIndex = ({ }) => {
+const LessonIndex = ({subType}) => {
 
 
 const [lessons, setLessons] = useState([]);
 
 const fetchLessons = async () => {
-  const resultLessons = await axios( Constants.BASEURL+"/api/lessons/");
+  const resultLessons = await axios( Constants.BASEURL+"/api/lessons/?publish=true&sub="+subType);
   setLessons(resultLessons.data);
 };
 

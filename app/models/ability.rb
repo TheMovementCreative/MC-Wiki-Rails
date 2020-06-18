@@ -11,8 +11,7 @@ class Ability
       p "SUPER ADMIN"
       can :manage, User
       can :manage, :all
-    end
-    if user && user.supervisor_role?
+    elsif user && user.supervisor_role?
       p "SUPERVISOR"
       can :create, Challenge
       can :read, Challenge
@@ -23,13 +22,19 @@ class Ability
       can :create, LessonPlan
       can :read, LessonPlan
       can :update, LessonPlan
+      can :read, Course
+      can :update, Course
+      can :create, Course
+      can :read, CoursePlan
+      can :create, CoursePlan
+      can :update, CoursePlan
       cannot :manage, User
       cannot :destroy, Challenge
-    end
-
-    if user && user.user_role?
+    elsif user && user.user_role?
       p "USER"
       cannot :manage, :rails_admin
+    else
+      cannot :manage, :rails_admin  
     end
 
 

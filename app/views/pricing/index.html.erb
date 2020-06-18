@@ -2,13 +2,13 @@
 
 <div class="row container-fluid">
 <div class='col-12'>
-<h3> Choose your level of support</h3>
+<h3> This is a test, pick Champion and you will be provided with test credit card information!</h3>
 <p> All funds given support the small development team in improving Move-More and delivering a better experience for all of our community! </p> 
 </div>
 <div class = 'col-12'>
- <h4><strong>$39.99/Month</strong> </h4>
+ <h4><strong>$40/Month </strong> </h4>
 <% if user_signed_in? %>
-<%= button_to 'Become a Founder', new_subscription_path(plan: "Founder $39.99/mo", plan_id: Rails.application.credentials.founder), class: "btn-primary btn-lg" %>
+<%= button_to 'Become a Champion', new_subscription_path(plan: "Champion $40/mo", plan_id: Rails.application.credentials.champion), class: "btn-primary btn-lg" %>
 <% else %>
 <%= link_to 'Subscribe', new_user_registration_path %>
 <% end %>
@@ -16,9 +16,9 @@
 </div>
 
 <div class="col-12">
-<h4><strong> $14.99/Month </strong></h4>
+<h4><strong> $20/Month </strong></h4>
 <% if user_signed_in? %>
-<%= button_to 'Become a Member', new_subscription_path(plan: "Member $14.99/mo", plan_id: Rails.application.credentials.member), class: "btn-primary btn-lg" %>
+<%= button_to 'Become a Warrior', new_subscription_path(plan: "Warrior $20/mo", plan_id: Rails.application.credentials.warrior), class: "btn-primary btn-lg" %>
 <% else %>
 <%= link_to 'Subscribe', new_user_registration_path %>
 <% end %>
@@ -26,9 +26,9 @@
 </div>
 
 <div class="col-12">
-<h4><strong> $0/Month </strong></h4>
+<h4><strong> $10/Month </strong></h4>
 <% if user_signed_in? %>
-<%= button_to 'Join the Community', new_subscription_path(plan: "Community $0/mo", plan_id: Rails.application.credentials.community), class: "btn-primary btn-lg" %>
+<%= button_to 'Become a Challenger', new_subscription_path(plan: "Challenger $10/mo", plan_id: Rails.application.credentials.challenger), class: "btn-primary btn-lg" %>
 <% else %>
 <%= link_to 'Subscribe', new_user_registration_path %>
 <% end %>

@@ -14,7 +14,7 @@
 </div>
 <% if !@user.subscription.nil? and !@user.subscription.stripe_subscription_id.nil? %>
     <div class="col-12">
-    <strong>Subscription Type:</strong> <p></p>
+    <strong>Subscription Type: "<%= current_user_plan(current_user) %>"</strong> <p></p>
     </div>
     <div class="col-12">
     <strong>Card On File:</strong> <p>************<%= @user.subscription.card_last_4 %></p>

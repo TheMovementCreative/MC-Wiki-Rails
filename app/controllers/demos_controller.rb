@@ -7,6 +7,9 @@ def index
 end
 
 def home
+    if helpers.current_user_plan(current_user) == "none"
+        redirect_to pricing_index_path
+    end
     @challenges = Challenge.all
     @lessons = Lesson.all
     @page = Page.where(name: 'home').first

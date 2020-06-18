@@ -1,6 +1,7 @@
 class SubscriptionsController < ApplicationController
 
     before_action :authenticate_user!, except: [:new, :create]
+    require 'stripe'
     layout "subs"
     def new
         if current_user.subscription && current_user.subscription.stripe_subscription_id?
@@ -16,7 +17,7 @@ class SubscriptionsController < ApplicationController
         Stripe.api_key = Rails.application.credentials.stripe_api_key
 
         plan_id = params[:plan_id]
-        plan = Stripe::Plan.retrieve(plan_id)
+        price = Stripe::Price.retrieve(plan_id)
         token = params[:stripeToken]
 
          if current_user.subscription && current_user.subscription.stripe_id?
@@ -29,13 +30,13 @@ class SubscriptionsController < ApplicationController
 
 
 
-        tmp_sub = customer.subscriptions.create(plan: plan.id)
+        tmp_sub = customer.subscriptions.create(plan: price.id)
 
         options ={
             stripe_id: customer.id,
             stripe_subscription_id: tmp_sub.id,
             subscribed: true,
-        
+            stripe_price_id: plan_id,
             card_last_4: params[:user][:card_last4],
             card_expiry_month: params[:user][:card_exp_month],
             card_expiry_year: params[:user][:card_exp_year]
@@ -52,7 +53,8 @@ class SubscriptionsController < ApplicationController
         Stripe.api_key = Rails.application.credentials.stripe_api_key
         customer = Stripe::Customer.retrieve(current_user.subscription.stripe_id)
         customer.subscriptions.retrieve(current_user.subscription.stripe_subscription_id).delete
-        current_user.subscription.update(stripe_subscription_id: nil)
+        current_user.subscription.update(stripe_subscription_id: nil,stripe_price_id: nil)
+        
         current_user.subscribed = false;
         current_user.subscription.subscribed = false;
 

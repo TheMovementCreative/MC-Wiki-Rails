@@ -5,11 +5,11 @@ import "../stylesheets/application.scss";
 import * as Constants from '../constants';
 import axios from 'axios';
 
-const ChallengeIndex = ({ }) => {
+const ChallengeIndex = ({subType}) => {
 const [challenges, setChallenges] = useState([]);
 
 const fetchChallenges = async () => {
-  const resultChallenges = await axios(`${Constants.BASEURL}/api/challenges/`);
+  const resultChallenges = await axios(`${Constants.BASEURL}/api/challenges/?publish=true&sub=${subType}`);
   setChallenges(resultChallenges.data);
 };
 

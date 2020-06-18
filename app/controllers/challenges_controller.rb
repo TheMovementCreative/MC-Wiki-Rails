@@ -1,4 +1,5 @@
 class ChallengesController < ApplicationController
+  include ApplicationHelper
   load_and_authorize_resource
 
   before_action :authenticate_user!
@@ -11,7 +12,14 @@ class ChallengesController < ApplicationController
     end 
 
     def show
-      @challenge = Challenge.find(params[:id])
+
+      challenge = Challenge.find(params[:id])
+
+      if (helpers.show_auth(challenge, helpers.current_user_plan(current_user)))
+      @challenge = challenge
+      else
+        redirect_to root_path
+      end
       
     end
 
