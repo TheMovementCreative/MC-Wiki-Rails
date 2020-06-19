@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_17_213158) do
+ActiveRecord::Schema.define(version: 2020_06_19_222138) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -33,6 +33,13 @@ ActiveRecord::Schema.define(version: 2020_06_17_213158) do
     t.boolean "publish"
     t.boolean "challenger_tier"
     t.boolean "warrior_tier"
+  end
+
+  create_table "challenges_tiers", force: :cascade do |t|
+    t.bigint "challenge_id"
+    t.bigint "tier_id"
+    t.index ["challenge_id"], name: "index_challenges_tiers_on_challenge_id"
+    t.index ["tier_id"], name: "index_challenges_tiers_on_tier_id"
   end
 
   create_table "course_plans", force: :cascade do |t|
@@ -62,6 +69,13 @@ ActiveRecord::Schema.define(version: 2020_06_17_213158) do
     t.index ["name"], name: "index_courses_on_name", unique: true
   end
 
+  create_table "courses_tiers", force: :cascade do |t|
+    t.bigint "course_id"
+    t.bigint "tier_id"
+    t.index ["course_id"], name: "index_courses_tiers_on_course_id"
+    t.index ["tier_id"], name: "index_courses_tiers_on_tier_id"
+  end
+
   create_table "lesson_plans", force: :cascade do |t|
     t.bigint "challenge_id"
     t.bigint "lesson_id"
@@ -88,6 +102,13 @@ ActiveRecord::Schema.define(version: 2020_06_17_213158) do
     t.boolean "publish"
     t.boolean "challenger_tier"
     t.boolean "warrior_tier"
+  end
+
+  create_table "lessons_tiers", force: :cascade do |t|
+    t.bigint "lesson_id"
+    t.bigint "tier_id"
+    t.index ["lesson_id"], name: "index_lessons_tiers_on_lesson_id"
+    t.index ["tier_id"], name: "index_lessons_tiers_on_tier_id"
   end
 
   create_table "pages", force: :cascade do |t|
@@ -123,6 +144,15 @@ ActiveRecord::Schema.define(version: 2020_06_17_213158) do
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "user_id"
     t.string "stripe_price_id"
+  end
+
+  create_table "tiers", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "tier", null: false
+    t.string "month"
+    t.integer "week"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "users", force: :cascade do |t|
