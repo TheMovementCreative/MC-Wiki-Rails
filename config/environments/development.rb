@@ -12,6 +12,8 @@ Rails.application.configure do
   # Show full error reports.
   config.consider_all_requests_local = true
 
+
+
   # Enable/disable caching. By default caching is disabled.
   # Run rails dev:cache to toggle caching.
   if Rails.root.join('tmp', 'caching-dev.txt').exist?
@@ -31,9 +33,12 @@ Rails.application.configure do
   # Store uploaded files on the local file system (see config/storage.yml for options).
   config.active_storage.service = :local
 
+  # devise mailer setup
+  config.action_mailer.default_url_options = { :host => 'localhost' }
+
   # Don't care if the mailer can't send.
   config.action_mailer.raise_delivery_errors = false
-
+  config.action_mailer.perform_deliveries = true
   config.action_mailer.perform_caching = false
 
   # Print deprecation notices to the Rails logger.
