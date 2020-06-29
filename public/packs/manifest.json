@@ -1,13 +1,13 @@
 {
-  "application.js": "/packs/js/application-c5343cce07d24226f42b.js",
-  "application.js.map": "/packs/js/application-c5343cce07d24226f42b.js.map",
+  "application.js": "/packs/js/application-16d4bdc991ee93f56a76.js",
+  "application.js.map": "/packs/js/application-16d4bdc991ee93f56a76.js.map",
   "entrypoints": {
     "application": {
       "js": [
-        "/packs/js/application-c5343cce07d24226f42b.js"
+        "/packs/js/application-16d4bdc991ee93f56a76.js"
       ],
       "js.map": [
-        "/packs/js/application-c5343cce07d24226f42b.js.map"
+        "/packs/js/application-16d4bdc991ee93f56a76.js.map"
       ]
     },
     "hello_react": {
@@ -20,10 +20,10 @@
     },
     "server_rendering": {
       "js": [
-        "/packs/js/server_rendering-c8ca6aa828f6ed522b3e.js"
+        "/packs/js/server_rendering-d0bec19617bf9264688a.js"
       ],
       "js.map": [
-        "/packs/js/server_rendering-c8ca6aa828f6ed522b3e.js.map"
+        "/packs/js/server_rendering-d0bec19617bf9264688a.js.map"
       ]
     },
     "subscriptions": {
@@ -38,12 +38,12 @@
   "hello_react.js": "/packs/js/hello_react-743478361023821b4608.js",
   "hello_react.js.map": "/packs/js/hello_react-743478361023821b4608.js.map",
   "media/images/MC_Logo.png": "/packs/media/images/MC_Logo-193195b5.png",
-  "media/images/dice.png": "/packs/media/images/dice-dc281acb.png",
-  "media/images/maxJump.jpg": "/packs/media/images/maxJump-6811d536.jpg",
-  "media/images/pkPrivate.png": "/packs/media/images/pkPrivate-62e42e15.png",
-  "media/images/woodTrainer.jpg": "/packs/media/images/woodTrainer-aba75db0.jpg",
-  "server_rendering.js": "/packs/js/server_rendering-c8ca6aa828f6ed522b3e.js",
-  "server_rendering.js.map": "/packs/js/server_rendering-c8ca6aa828f6ed522b3e.js.map",
+  "media/images/dice.jpg": "/packs/media/images/dice-24393a0c.jpg",
+  "media/images/maxJump.jpg": "/packs/media/images/maxJump-477819f4.jpg",
+  "media/images/pkPrivate.jpg": "/packs/media/images/pkPrivate-ebfd384a.jpg",
+  "media/images/woodTrainer.jpg": "/packs/media/images/woodTrainer-3fd92dcd.jpg",
+  "server_rendering.js": "/packs/js/server_rendering-d0bec19617bf9264688a.js",
+  "server_rendering.js.map": "/packs/js/server_rendering-d0bec19617bf9264688a.js.map",
   "subscriptions.js": "/packs/js/subscriptions-cc309f2b84675cbbc7a3.js",
   "subscriptions.js.map": "/packs/js/subscriptions-cc309f2b84675cbbc7a3.js.map"
 }

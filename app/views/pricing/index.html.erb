@@ -2,13 +2,13 @@
 
 <div class="row container-fluid">
 <div class='col-12'>
-<h3> This is a test, pick Champion and you will be provided with test credit card information!</h3>
-<p> All funds given support the small development team in improving Move-More and delivering a better experience for all of our community! </p> 
+<p><strong> Select your access tier</strong> </p> 
 </div>
 <div class = 'col-12'>
- <h4><strong>$40/Month </strong> </h4>
+ <h4><strong>Champion $70/Month </strong> </h4> 
+ <p>Full access to MOVE MORE's database of challenges and lessons, founder's tee and a producer's credit on the site.  Access to new features like creation of lessons and other experimental functions! </p>
 <% if user_signed_in? %>
-<%= button_to 'Become a Champion', new_subscription_path(plan: "Champion $40/mo", plan_id: Rails.application.credentials.champion), class: "btn-primary btn-lg" %>
+<%= button_to 'Become a Champion', new_subscription_path(plan: "Champion $70/mo", plan_id: Rails.application.credentials.champion), class: "btn-primary btn-lg" %>
 <% else %>
 <%= link_to 'Subscribe', new_user_registration_path %>
 <% end %>
@@ -16,9 +16,10 @@
 </div>
 
 <div class="col-12">
-<h4><strong> $20/Month </strong></h4>
+<h4><strong>Warrior $40/Month </strong></h4>
+<p>Gain access to a themed rotating monthly course of challenges and lessons hand picked by top parkour athletes!</p>
 <% if user_signed_in? %>
-<%= button_to 'Become a Warrior', new_subscription_path(plan: "Warrior $20/mo", plan_id: Rails.application.credentials.warrior), class: "btn-primary btn-lg" %>
+<%= button_to 'Become a Warrior', new_subscription_path(plan: "Warrior $40/mo", plan_id: Rails.application.credentials.warrior), class: "btn-primary btn-lg" %>
 <% else %>
 <%= link_to 'Subscribe', new_user_registration_path %>
 <% end %>
@@ -26,7 +27,8 @@
 </div>
 
 <div class="col-12">
-<h4><strong> $10/Month </strong></h4>
+<h4><strong>Challenger $10/Month </strong></h4>
+<p>Weekly lesson sent to you from the MOVE MORE database each week!</p>
 <% if user_signed_in? %>
 <%= button_to 'Become a Challenger', new_subscription_path(plan: "Challenger $10/mo", plan_id: Rails.application.credentials.challenger), class: "btn-primary btn-lg" %>
 <% else %>

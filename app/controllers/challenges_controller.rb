@@ -6,12 +6,22 @@ class ChallengesController < ApplicationController
 
   
     def index
+      if helpers.current_user_plan(current_user) == "none" || !helpers.is_sub_active(current_user.subscription.stripe_subscription_id)
+        if !current_user.superadmin_role
+        redirect_to pricing_index_path
+        end
+    end
       if current_user
         @challenges = Challenge.all
       end
     end 
 
     def show
+      if helpers.current_user_plan(current_user) == "none" || !helpers.is_sub_active(current_user.subscription.stripe_subscription_id)
+        if !current_user.superadmin_role
+        redirect_to pricing_index_path
+        end
+    end
 
       challenge = Challenge.find(params[:id])
 
