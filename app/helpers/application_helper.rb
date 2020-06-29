@@ -42,4 +42,21 @@ module ApplicationHelper
 
     end
 
+    def is_sub_active(subID)
+        Stripe.api_key = Rails.application.credentials.stripe_api_key
+        
+        this_sub = Stripe::Subscription.retrieve(subID)
+
+        return (this_sub.status == "active")
+      
+
+
+    end
+
+    def check_plan
+        if helpers.current_user_plan(current_user) == "none" || !helpers.is_sub_active(current_user.subscription.stripe_subscription_id)
+            redirect_to pricing_index_path
+        end
+    end
+
 end

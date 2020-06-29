@@ -1,14 +1,15 @@
 class DemosController < ApplicationController
     skip_before_action :authenticate_user!, :only => [:index]
-
+    
 def index
-    @lessons = Lesson.find(15,24,23,21)
-    @challenges = Challenge.all
+    
 end
 
 def home
-    if helpers.current_user_plan(current_user) == "none"
+    if helpers.current_user_plan(current_user) == "none" || !helpers.is_sub_active(current_user.subscription.stripe_subscription_id)
+        if !current_user.superadmin_role
         redirect_to pricing_index_path
+        end
     end
     @challenges = Challenge.all
     @lessons = Lesson.all

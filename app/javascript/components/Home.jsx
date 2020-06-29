@@ -6,7 +6,7 @@ import mikePic from "../../assets/images/MC_Logo.png";
 import * as Constants from '../constants';
 import axios from "axios";
 
-const Home = ({ challenges, lessons, page, subType }) => {
+const Home = ({ page, subType }) => {
   const [featuredChallenge, setFeaturedChallenge] = useState();
   const [featuredLesson, setFeaturedLesson] = useState();
   const [publishedLessons, setPublishedLessons] = useState([]);

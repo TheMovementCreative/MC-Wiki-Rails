@@ -3,5 +3,13 @@
 
 
 <%= render :partial => 'shared/nav_top' %>
-<%= react_component("Home", {challenges: @challenges, lessons:@lessons, page:@page, subType: current_user_plan(current_user) }) %>
+
+
+
+
+<% if (current_user_plan(current_user) == "challenger") %>
+    <%= react_component("HomeChallenger", {page: @page, subType: "challenger"}) %>
+    <% else %>
+<%= react_component("Home", { page:@page, subType: current_user_plan(current_user) }) %>
+<% end %>
 

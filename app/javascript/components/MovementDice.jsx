@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import PropTypes, { string } from "prop-types";
-import dice from "../../assets/images/dice.png";
+import dice from "../../assets/images/dice.jpg";
 import MovementDiceCard from "./MovementDiceCard";
 
 const MovementDice = ({ challenges }) => {

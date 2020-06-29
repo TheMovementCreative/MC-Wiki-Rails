@@ -1,6 +1,7 @@
 class SubscriptionsController < ApplicationController
 
-    before_action :authenticate_user!, except: [:new, :create]
+    before_action :authenticate_user!
+    #, except: [:new, :create]
     require 'stripe'
     layout "subs"
     def new
@@ -22,13 +23,17 @@ class SubscriptionsController < ApplicationController
 
          if current_user.subscription && current_user.subscription.stripe_id?
             customer =  Stripe::Customer.retrieve(current_user.subscription.stripe_id)
+            Stripe::Customer.update(current_user.subscription.stripe_id, {source: token})
+
             
         else
+            #cust_name = current_user.first_name + " " + current_user.last_name %%%%%%% metadata:{ name: (cust_name)}
             customer =  Stripe::Customer.create(email: current_user.email, source: token)
             current_user.subscription = Subscription.new(:stripe_id => customer.id)
         end
 
-
+            
+        
 
         tmp_sub = customer.subscriptions.create(plan: price.id)
 
