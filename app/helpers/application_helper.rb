@@ -8,13 +8,13 @@ module ApplicationHelper
         if user && user.subscription
             if user.superadmin_role
                 return "admin"
-            elsif user.subscription.stripe_price_id === Rails.application.credentials.challenger
+            elsif user.subscription.stripe_price_id === Rails.application.credentials.challenger ||  user.subscription.stripe_price_id === Rails.application.credentials.challenger_shadow
                 return "challenger"
             
-            elsif user.subscription.stripe_price_id === Rails.application.credentials.warrior
+            elsif user.subscription.stripe_price_id === Rails.application.credentials.warrior || user.subscription.stripe_price_id === Rails.application.credentials.warrior_shadow
                 return "warrior"
             
-            elsif user.subscription.stripe_price_id === Rails.application.credentials.champion
+            elsif user.subscription.stripe_price_id === Rails.application.credentials.champion || user.subscription.stripe_price_id === Rails.application.credentials.champion_shadow
                 return "champion"
             else
                 return "none"
