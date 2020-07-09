@@ -65,6 +65,7 @@ const LessonFrame = ({ lessonID, index }) => {
               justifyContent: "flex-start",
               alignItems: "center",
               flexDirection: "column",
+              whiteSpace: "pre-line"
             }}
           >
             <p>

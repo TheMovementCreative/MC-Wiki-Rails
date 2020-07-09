@@ -47,7 +47,7 @@ return(
 
     <div className="container-fluid">
     <button className="btn tmc-bg-dk-blu tmc-white btn-block btn-sm" type="button" onClick={() => setIsCollapsed(!isCollapsed)}>
-        <div style={{whiteSpace: 'pre'}}><sub><small> &#x25bc;</small></sub>           See Lesson            <sub><small>&#x25bc;</small></sub></div>
+        <div style={{whiteSpace: 'pre-line'}}><sub><small> &#x25bc;</small></sub>           See Lesson            <sub><small>&#x25bc;</small></sub></div>
     </button> 
     </div>
 
