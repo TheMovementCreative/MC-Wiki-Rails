@@ -59,4 +59,14 @@ module ApplicationHelper
         end
     end
 
+    def lesson_warrior_set(lessonIDs)
+        lessonIDs.each do |i|
+         lesson = Lesson.find(i)
+         lesson.update(warrior_tier:true)
+         lesson.challenges.each do |j|
+         j.update(warrior_tier: true)
+         end 
+     end
+    end
+
 end
